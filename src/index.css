@@ -1,1 +1,215 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 62.5%;
+}
+
+.App {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.container {
+  margin: 1%;
+  background-color: #969494;
+  width: 100%;
+  overflow: auto;
+  min-height: 100vh;
+}
+.container-navBar {
+  background-color: #79b34ac0;
+  display: flex;
+  width: 95%;
+  height: 5%;
+  margin: 0 auto;
+}
+.left-navBar {
+  padding: 0 25rem 0 1rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  background-color: #b9f333;
+}
+.right-navBar {
+  padding: 0 1rem 0 25rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  background-color: #42aa2d;
+}
+
+.header-main-section {
+  padding: 1rem;
+  background-color: rgba(163, 202, 21, 0.781);
+  margin: 0 auto;
+  width: 95%;
+  height: 15%;
+  display: flex;
+}
+
+.search-area {
+  margin: 0 auto;
+  height: 100%;
+  width: 33.33%;
+  background-color: #cee73c;
+  display: flex;
+
+  & > .search-input {
+    background-color: #831818;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.logo-area {
+  background-image: url(/src/assets/Logo.png);
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  width: 15rem;
+  height: 100%;
+  display: flex;
+}
+.header-tools {
+  width: 33.33%;
+  margin: 0 auto;
+  height: 100%;
+  background-color: #596612;
+  display: flex;
+
+  & > .support {
+    width: 80%;
+    height: 100%;
+    background-color: #d13434;
+  }
+  & > .shop-bag {
+    width: 20%;
+    height: 100%;
+    background-color: #49f78c;
+  }
+}
+
+.container-main-navigation {
+  margin: 0 auto;
+  background-color: #fff;
+  width: 95%;
+  height: 8%;
+  display: flex;
+}
+.navigation-menu {
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  & > li {
+    justify-content: center;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.container-slider {
+  margin: 0 auto;
+  height: 50%;
+  width: 95%;
+  background-color: #352828;
+}
+
+.product-category {
+  margin: 0 auto;
+  background-color: aqua;
+  display: flex;
+  width: 95%;
+  height: 30%;
+}
+
+.category {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  & > .category-item {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+.container-selling-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  & > .title-selling-items {
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+    background-color: #37c092;
+  }
+}
+
+.card-selling-items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  & > .card {
+    display: flex;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: #42aa2d;
+    height: 20rem;
+    flex-basis: calc(25% - 20px);
+    border: 1px solid black;
+  }
+}
+
+.container-blog-wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 95%;
+  height: 30%;
+  background-color: #f86e6e;
+  flex-direction: column;
+  & > .title-blog {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    background-color: #921313;
+  }
+}
+.content-blog-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  & > div {
+    margin: 1rem;
+    height: 80%;
+    width: 33.33%;
+    background-color: #271b96;
+  }
+}
+
+.container-fotter {
+  display: flex;
+  width: 95%;
+  height: 5%;
+  margin: 0 auto;
+  background-color: blueviolet;
+}
