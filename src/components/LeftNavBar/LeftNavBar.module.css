@@ -3,7 +3,11 @@
   width: 100%;
   height: 100%;
   background-color: black;
-  & > li {
+  justify-content: space-around;
+
+  & > button {
+    border: none;
+    background-color: transparent;
     cursor: pointer;
     font-size: 1.3rem;
     justify-content: center;
@@ -12,5 +16,9 @@
     display: flex;
     color: white;
     align-items: center;
+  }
+  & > button:hover {
+    color: #d3cdcd;
+    background-color: #757575;
   }
 }

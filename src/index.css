@@ -34,14 +34,14 @@ html {
   margin: 0 auto;
 }
 .left-navBar {
-  padding: 0 25rem 0 1rem;
+  padding: 0 30rem 0 1rem;
   width: 50%;
   height: 100%;
   display: flex;
   background-color: #b9f333;
 }
 .right-navBar {
-  padding: 0 1rem 0 25rem;
+  padding: 0 1rem 0 30rem;
   width: 50%;
   height: 100%;
   display: flex;
@@ -49,6 +49,7 @@ html {
 }
 
 .header-main-section {
+  justify-content: space-around;
   padding: 1rem;
   background-color: rgba(163, 202, 21, 0.781);
   margin: 0 auto;
@@ -58,11 +59,11 @@ html {
 }
 
 .search-area {
-  margin: 0 auto;
   height: 100%;
   width: 33.33%;
   background-color: #cee73c;
   display: flex;
+  padding: 2rem;
 
   & > .search-input {
     background-color: #831818;
@@ -76,16 +77,17 @@ html {
   background-color: transparent;
   background-size: cover;
   background-position: center;
-  width: 15rem;
+  width: 25rem;
   height: 100%;
   display: flex;
 }
 .header-tools {
   width: 33.33%;
-  margin: 0 auto;
+  margin: 0 0 0 2rem;
   height: 100%;
   background-color: #596612;
   display: flex;
+  padding: 2rem;
 
   & > .support {
     width: 80%;

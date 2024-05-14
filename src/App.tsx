@@ -1,6 +1,7 @@
 import './App.css';
 import LeftNavBar from './components/LeftNavBar/LeftNavBar';
 import RightNavBar from './components/RigtNavBar/RightNavBar';
+import SearchBar from './components/SearchBar/SearchBar';
 function App() {
   return (
     <>
@@ -18,12 +19,12 @@ function App() {
           <div className='header-main-section'>
             <div className='search-area'>
               <div className='search-input'>
-                <input type='text' />
-                <button></button>
+                <SearchBar />
               </div>
             </div>
 
             <div className='logo-area'></div>
+            
             <div className='header-tools'>
               <div className='support'>support</div>
               <div className='shop-bag'>bag</div>
@@ -34,7 +35,7 @@ function App() {
             <nav className='navigation-menu'>
               <li>Home</li>
               <li>Theme Feature</li>
-              <li> Our Shop</li>
+              <li>Our Shop</li>
               <li>Blog</li>
               <li>Contact Us</li>
             </nav>
