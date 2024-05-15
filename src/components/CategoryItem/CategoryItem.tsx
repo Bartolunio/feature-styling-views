@@ -1,24 +1,22 @@
 import styles from './CategoryItem.module.css';
 
 const CategoryItem = () => {
+  const categories = [
+    { name: 'Hoodie', quantity: '3 Items', imageClass: styles.imageHoodie },
+    { name: 'Handbag', quantity: '6 Items', imageClass: styles.imageHandbag },
+    { name: 'Shirt', quantity: '12 Items', imageClass: styles.imageShirt },
+    { name: 'Shoes', quantity: '9 Items', imageClass: styles.imageShoes },
+  ];
   return (
     <div className={styles.contentCategory}>
-      <div className={styles.categoryItem}>
-        <p className='name'>Smartwatch</p>
-        <span className='quantity'>3 Items</span>
-      </div>
-      <div className={styles.categoryItem}>
-        <p className='name'>Accessories</p>
-        <span className='quantity'>1 Items</span>
-      </div>
-      <div className={styles.categoryItem}>
-        <p className='name'>Jawellery</p>
-        <span className='quantity'>12 Items</span>
-      </div>
-      <div className={styles.categoryItem}>
-        <p className='name'>Watches</p>
-        <span className='quantity'>7 Items</span>
-      </div>
+      {categories.map((category, index) => (
+        <div className={styles.categoryItem} key={index}>
+          <div className={`${category.imageClass} ${styles.imageContainer}`}>
+            <p className={styles.name}>{category.name}</p>
+            <p className={styles.quantity}>{category.quantity}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

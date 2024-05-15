@@ -1,0 +1,59 @@
+.contentBlogWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    flex: 1;
+    margin: 2rem;
+    background-color: #271b96;
+  }
+}
+.item {
+  transition: transform 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.contentShopFounder {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/Marcin.jpg);
+  & > p {
+    text-align: end;
+    color: white;
+    font-size: 2rem;
+    padding: 0 2rem 0 0;
+  }
+}
+
+.contentOffers {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/offert.jpg);
+  & > p {
+    text-align: end;
+    color: white;
+    font-size: 2rem;
+    padding: 0 2rem 0 0;
+  }
+}
+
+.contentComingSoon {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/comingSoon.jpg);
+  & > p {
+    text-align: end;
+    color: white;
+    font-size: 2rem;
+    padding: 0 2rem 0 0;
+  }
+}

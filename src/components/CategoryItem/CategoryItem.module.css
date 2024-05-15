@@ -5,7 +5,57 @@
   width: 100%;
   height: 100%;
   & > .categoryItem {
+    margin: 2rem;
+    background-color: #ee68cc;
     flex: 1;
     text-align: center;
   }
+}
+.imageHoodie {
+  background-size: cover;
+
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/bluza.jpg');
+}
+
+.imageHandbag {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/torebka.jpg');
+}
+.imageShirt {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/koszulka.webp');
+}
+
+.imageShoes {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/buty.jpg');
+}
+.quantity {
+  text-align: end;
+  color: white;
+  font-size: 2rem;
+  padding: 0 2rem 0 0;
+}
+.name {
+  padding: 0 2rem 0 0;
+  text-align: end;
+  color: white;
+  font-size: 3rem;
+}
+.imageContainer {
+  transition: transform 0.3s ease;
+}
+
+.imageContainer:hover {
+  transform: scale(1.05);
 }
