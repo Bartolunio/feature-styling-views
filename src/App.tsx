@@ -2,6 +2,9 @@ import './App.css';
 import LeftNavBar from './components/LeftNavBar/LeftNavBar';
 import RightNavBar from './components/RigtNavBar/RightNavBar';
 import SearchBar from './components/SearchBar/SearchBar';
+import ShoppingTools from './components/ShoppingTools/ShoppingTools';
+import Navigation from './components/Navigation/Navigation';
+import CategoryItem from './components/CategoryItem/CategoryItem';
 function App() {
   return (
     <>
@@ -24,44 +27,22 @@ function App() {
             </div>
 
             <div className='logo-area'></div>
-            
+
             <div className='header-tools'>
-              <div className='support'>support</div>
-              <div className='shop-bag'>bag</div>
+              <ShoppingTools />
             </div>
           </div>
 
           <div className='container-main-navigation'>
             <nav className='navigation-menu'>
-              <li>Home</li>
-              <li>Theme Feature</li>
-              <li>Our Shop</li>
-              <li>Blog</li>
-              <li>Contact Us</li>
+              <Navigation />
             </nav>
           </div>
 
           <div className='container-slider'></div>
 
           <section className='product-category'>
-            <div className='category'>
-              <div className='category-item'>
-                <p className='name'>Smartwatch</p>
-                <span className='quantity'>3 Items</span>
-              </div>
-              <div className='category-item'>
-                <p className='name'>Accessories</p>
-                <span className='quantity'>1 Items</span>
-              </div>
-              <div className='category-item'>
-                <p className='name'>Jawellery</p>
-                <span className='quantity'>12 Items</span>
-              </div>
-              <div className='category-item'>
-                <p className='name'>Watches</p>
-                <span className='quantity'>7 Items</span>
-              </div>
-            </div>
+            <CategoryItem />
           </section>
 
           <div className='container-selling-item'>

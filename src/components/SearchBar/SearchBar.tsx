@@ -18,7 +18,6 @@ const SearchBar = () => {
         className={styles.inputSearch}
         type='text'
         placeholder={showPlaceholder ? 'Search for products' : ''}
-        // placeholder='Search for products'
         onClick={handleClick}
       />
       <button>
