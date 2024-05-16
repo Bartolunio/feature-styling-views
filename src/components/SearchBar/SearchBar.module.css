@@ -8,6 +8,7 @@
   border: 1px solid black;
 
   & > input {
+    color: white;
     font-size: 2rem;
     padding: 1rem;
     border: none;
@@ -17,7 +18,7 @@
   }
   & > input:focus {
     outline: none;
-    color: black;
+    color: white
   }
   & > input::placeholder {
     color: white;

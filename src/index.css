@@ -142,15 +142,6 @@ html {
   flex-wrap: wrap;
   width: 90%;
   margin: 0 auto;
-  & > .card {
-    display: flex;
-    padding: 1rem;
-    margin: 0.5rem;
-    background-color: #42aa2d;
-    height: 20rem;
-    flex-basis: calc(25% - 20px);
-    border: 1px solid black;
-  }
 }
 
 .container-blog-wrapper {

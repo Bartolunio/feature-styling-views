@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import LeftNavBar from './components/LeftNavBar/LeftNavBar';
 import RightNavBar from './components/RigtNavBar/RightNavBar';
 import SearchBar from './components/SearchBar/SearchBar';
@@ -13,25 +11,6 @@ import Card from './components/Card/Card';
 import './App.css';
 
 function App() {
-  const [data, setData] = useState();
-
-  ///---------- API ----------  /////
-  const url = `https://fakestoreapi.com/products`;
-
-  ///---------- Ustawianie nasłuchiwnia na input ----------  /////
-
-  useEffect(() => {
-    axios({
-      method: 'GET',
-      url: url,
-    })
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-      })
-      .catch((e) => console.log(e));
-  }, [url]);
-
   return (
     <>
       <div className='App'>
@@ -76,7 +55,7 @@ function App() {
           <div className='container-selling-item'>
             <h1 className='title-selling-items'>Best Selling Products</h1>
             <div className='card-selling-items'>
-              <Card product={data} />
+              <Card />
             </div>
           </div>
 
