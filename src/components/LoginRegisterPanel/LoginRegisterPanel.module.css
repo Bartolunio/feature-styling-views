@@ -1,18 +1,14 @@
-html,
 body {
   background-color: #222;
-  height: 100%;
-  width: 100%;
-  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .contentLoginPanel {
+  margin-top: 30rem;
   flex-direction: column;
   display: flex;
-
   & > h1 {
     color: white;
     margin-bottom: 3rem;

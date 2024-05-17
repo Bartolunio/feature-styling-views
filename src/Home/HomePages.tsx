@@ -1,4 +1,4 @@
-import '../App.css';
+import "../App.css"
 
 import LeftNavBar from '../components/LeftNavBar/LeftNavBar';
 import RightNavBar from '../components/RigtNavBar/RightNavBar';

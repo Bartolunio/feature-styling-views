@@ -1,7 +1,7 @@
 import './Carousel.module.css';
 
 const Carousel = () => {
-  return <></>;
+  return <>1</>;
 };
 
 export default Carousel;

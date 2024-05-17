@@ -1,8 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import LoginRegisterPanel from './components/LoginRegisterPanel/LoginRegisterPanel';
 import HomePages from './Home/HomePages';
-
-import './App.css';
+import './index.css';
 
 function App() {
   return (
