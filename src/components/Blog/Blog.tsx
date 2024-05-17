@@ -21,7 +21,6 @@ const Blog = () => {
       <div className={`${styles.comingSoon} ${styles.item}`}>
         <div className={styles.contentComingSoon}>
           <p>Coming Soon</p>
-         
         </div>
       </div>
     </div>

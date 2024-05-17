@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './RightNavBar.module.css';
 import { FiLogIn } from 'react-icons/fi';
 import { IoHeartOutline } from 'react-icons/io5';
@@ -5,7 +6,13 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaPinterestP } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 
-export const RightNavBar = () => {
+const RightNavBar = () => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login-register');
+  };
+
   return (
     <>
       <section className={styles.contentRightSite}>
@@ -13,7 +20,9 @@ export const RightNavBar = () => {
           <div>
             <FiLogIn />
           </div>
-          <button className={styles.login}>LOGIN/REGISTER</button>
+          <button className={styles.login} onClick={handleLoginClick}>
+            LOGIN/REGISTER
+          </button>
         </div>
         <div className={styles.contentWishList}>
           <div>
