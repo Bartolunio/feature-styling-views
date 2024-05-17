@@ -5,7 +5,7 @@
   height: 50%;
   justify-content: center;
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid #222;
 
   & > input {
     color: white;
@@ -18,14 +18,14 @@
   }
   & > input:focus {
     outline: none;
-    color: white
+    color: white;
   }
   & > input::placeholder {
     color: white;
   }
 
   & > button {
-    color: white;
+    color: orange;
     background-color: transparent;
     border: none;
     height: 100%;

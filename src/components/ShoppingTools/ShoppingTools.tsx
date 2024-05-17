@@ -7,14 +7,14 @@ const ShoppingTools = () => {
     <>
       <div className={styles.contentShoppingTools}>
         <div className={styles.support}>
-          <Ri24HoursLine />
+          <Ri24HoursLine className={styles.icon} />
           <div className={styles.informationSupport}>
             <p>Customer Support</p>
             <p>1-25-534-634</p>
           </div>
         </div>
         <div className={styles.shoppingCart}>
-          <FiShoppingCart />
+          <FiShoppingCart className={styles.icon} />
           <div className={styles.informationShoppingCart}>
             <p>0 ITEMS</p>
             <p>$0.00</p>

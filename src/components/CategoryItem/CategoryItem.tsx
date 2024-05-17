@@ -2,10 +2,18 @@ import styles from './CategoryItem.module.css';
 
 const CategoryItem = () => {
   const categories = [
-    { name: 'Hoodie', quantity: '3 Items', imageClass: styles.imageHoodie },
-    { name: 'Handbag', quantity: '6 Items', imageClass: styles.imageHandbag },
-    { name: 'Shirt', quantity: '12 Items', imageClass: styles.imageShirt },
-    { name: 'Shoes', quantity: '9 Items', imageClass: styles.imageShoes },
+    {
+      name: 'Women clothing',
+      quantity: '3 Items',
+      imageClass: styles.imageHoodie,
+    },
+    { name: 'Jewelery', quantity: '6 Items', imageClass: styles.imageHandbag },
+    {
+      name: 'Men clothing',
+      quantity: '12 Items',
+      imageClass: styles.imageShirt,
+    },
+    { name: 'Electronics', quantity: '9 Items', imageClass: styles.imageShoes },
   ];
   return (
     <div className={styles.contentCategory}>
