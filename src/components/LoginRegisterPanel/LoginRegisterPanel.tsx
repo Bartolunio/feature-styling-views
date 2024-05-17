@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import styles from './LoginRegisterPanel.module.css';
-import LeftNavBar from '../LeftNavBar/LeftNavBar';
-import RightNavBar from '../RigtNavBar/RightNavBar';
-import SearchBar from '../SearchBar/SearchBar';
-import ShoppingTools from '../ShoppingTools/ShoppingTools';
-import Navigation from '../Navigation/Navigation';
-import '../../App.css';
+
 const LoginRegisterPanel = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -16,39 +11,12 @@ const LoginRegisterPanel = () => {
     console.log('Password:', password);
   };
   return (
-    <>
-      <nav className='container-navBar'>
-        <div className='left-navBar'>
-          <LeftNavBar />
-        </div>
-        <div className='right-navBar'>
-          <RightNavBar />
-        </div>
-      </nav>
-      <div className='header-main-section'>
-        <div className='search-area'>
-          <div className='search-input'>
-            <SearchBar />
-          </div>
-        </div>
-
-        <div className='logo-area'></div>
-
-        <div className='header-tools'>
-          <ShoppingTools />
-        </div>
-      </div>
-      <div className='container-main-navigation'>
-        <nav className='navigation-menu'>
-          <Navigation />
-        </nav>
-      </div>
-
+    <div className={styles.contentLoginPanel}>
+      <h1>LOGIN</h1>
       <div className={styles.loginPanel}>
-        <h1>LOGIN</h1>
         <form onSubmit={handleSubmit}>
           <div className={styles.inputGroup}>
-            <label htmlFor='username'>USERNAME OR EMAIL ADDRESS</label>
+            <label htmlFor='username'>USERNAME OR EMAIL ADDRESS * </label>
             <input
               type='text'
               id='username'
@@ -58,7 +26,7 @@ const LoginRegisterPanel = () => {
             />
           </div>
           <div className={styles.inputGroup}>
-            <label htmlFor='password'>PASSWORD</label>
+            <label htmlFor='password'>PASSWORD * </label>
             <input
               type='password'
               id='password'
@@ -66,11 +34,20 @@ const LoginRegisterPanel = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <button type='submit'>Login</button>
+            <div className={styles.information}>
+              <button className={styles.loginBtn} type='submit'>
+                Login
+              </button>
+              <div className={styles.checkbox}>
+                <input type='checkbox' />
+                <p>REMEMEBER ME</p>
+                <span>Lost your password?</span>
+              </div>
+            </div>
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 export default LoginRegisterPanel;
