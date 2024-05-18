@@ -1,18 +1,37 @@
 import { useState } from 'react';
+import { IoCloseCircleOutline } from 'react-icons/io5';
+import { FaRegEye } from 'react-icons/fa';
+import { FaRegEyeSlash } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+
 import styles from './LoginRegisterPanel.module.css';
 const LoginRegisterPanel = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log('Username or Email Address:', username);
     console.log('Password:', password);
   };
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   return (
     <>
       <div className={styles.contentLoginPanel}>
-        <h1>LOGIN</h1>
+        <div className={styles.naviLogin}>
+          <h1>LOGIN</h1>
+          <IoCloseCircleOutline
+            className={styles.closeIcon}
+            onClick={handleGoBack}
+          />
+        </div>
         <div className={styles.loginPanel}>
           <form onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
@@ -26,21 +45,33 @@ const LoginRegisterPanel = () => {
               />
             </div>
             <div className={styles.inputGroup}>
-              <label htmlFor='password'>PASSWORD * </label>
-              <input
-                type='password'
-                id='password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <label htmlFor='password'>PASSWORD *</label>
+              <div className={styles.passwordContainer}>
+                <div className={styles.inputWrapper}>
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    id='password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <span
+                  className={styles.icon}
+                  onClick={togglePasswordVisibility}
+                >
+                  {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+                </span>
+              </div>
               <div className={styles.information}>
                 <button className={styles.loginBtn} type='submit'>
                   Login
                 </button>
-                <div className={styles.checkbox}>
-                  <input type='checkbox' />
-                  <p>REMEMEBER ME</p>
+                <div className={styles.informationPassword}>
+                  <div className={styles.checkbox}>
+                    <input type='checkbox' />
+                    <p>REMEMEBER ME</p>
+                  </div>
                   <span>Lost your password?</span>
                 </div>
               </div>
