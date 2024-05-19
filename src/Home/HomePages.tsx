@@ -1,4 +1,4 @@
-import "../App.css"
+import '../App.css';
 
 import LeftNavBar from '../components/LeftNavBar/LeftNavBar';
 import RightNavBar from '../components/RigtNavBar/RightNavBar';
@@ -9,6 +9,7 @@ import Card from '../components/Card/Card';
 import Carousel from '../components/Carousel/Carousel';
 import CategoryItem from '../components/CategoryItem/CategoryItem';
 import Blog from '../components/Blog/Blog';
+import Footer from '../components/Footer/Footer';
 const HomePages = () => {
   return (
     <>
@@ -63,7 +64,9 @@ const HomePages = () => {
             <Blog />
           </section>
 
-          <footer className='container-fotter'>stopka</footer>
+          <footer className='container-fotter'>
+            <Footer />
+          </footer>
         </div>
       </div>
     </>

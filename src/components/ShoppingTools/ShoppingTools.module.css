@@ -103,6 +103,7 @@
   }
 }
 .support:hover .additionalInfo {
+  border: none;
   display: block;
   opacity: 1;
 }

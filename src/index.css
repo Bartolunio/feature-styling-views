@@ -21,7 +21,6 @@ html {
 .container {
   background-color: #222;
   width: 100%;
-  overflow: auto;
   min-height: 100vh;
 }
 .container-navBar {
@@ -148,6 +147,5 @@ html {
 
 .container-fotter {
   display: flex;
-  height: 5%;
-  background-color: blueviolet;
+  height: 20%;
 }
