@@ -46,7 +46,7 @@ html {
   justify-content: space-around;
   padding: 1rem;
   background-color: #333;
-  height: 15%;
+  height: 10%;
   display: flex;
 }
 
@@ -69,8 +69,7 @@ html {
   background-color: transparent;
   background-size: cover;
   background-position: center;
-  width: 25rem;
-  /* height: 100%; */
+  width: 32rem;
   display: flex;
 }
 .header-tools {
