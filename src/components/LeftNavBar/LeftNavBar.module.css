@@ -1,3 +1,4 @@
+
 .contentLeftSite {
   display: flex;
   width: 100%;
@@ -5,7 +6,7 @@
   background-color: #333;
   justify-content: space-around;
 
-  & > button {
+  & > a {
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -16,8 +17,9 @@
     display: flex;
     color: white;
     align-items: center;
+    text-decoration: none;
   }
-  & > button:hover {
+  & > a:hover {
     background-color: #3b3b3b;
   }
 }

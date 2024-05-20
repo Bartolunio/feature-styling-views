@@ -64,9 +64,9 @@
     background-color: transparent;
     color: white;
     border: none;
-    cursor: pointer;
   }
 }
 .contentWishList:hover {
+  cursor: pointer;
   background-color: #3b3b3b;
 }

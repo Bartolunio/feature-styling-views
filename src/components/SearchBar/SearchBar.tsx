@@ -11,10 +11,10 @@ const SearchBar = () => {
     setShowPlaceholder(false);
     setTimeout(() => {
       setShowPlaceholder(true);
-    }, 2000);
+    }, 1000);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setInputValue(value);
   };

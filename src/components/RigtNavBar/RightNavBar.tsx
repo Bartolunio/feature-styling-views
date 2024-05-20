@@ -16,13 +16,11 @@ const RightNavBar = () => {
   return (
     <>
       <section className={styles.contentRightSite}>
-        <div className={styles.contentLogin}>
+        <div className={styles.contentLogin} onClick={handleLoginClick}>
           <div>
             <FiLogIn />
           </div>
-          <button className={styles.login} onClick={handleLoginClick}>
-            LOGIN/REGISTER
-          </button>
+          <button className={styles.login}>LOGIN / REGISTER</button>
         </div>
         <div className={styles.contentWishList}>
           <div>
