@@ -5,17 +5,13 @@ import { FaRegEyeSlash } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './LoginRegisterPanel.module.css';
+
 const LoginRegisterPanel = () => {
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log('Username or Email Address:', username);
-    console.log('Password:', password);
-  };
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
@@ -33,7 +29,7 @@ const LoginRegisterPanel = () => {
           />
         </div>
         <div className={styles.loginPanel}>
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className={styles.inputGroup}>
               <label htmlFor='username'>USERNAME OR EMAIL ADDRESS * </label>
               <input
