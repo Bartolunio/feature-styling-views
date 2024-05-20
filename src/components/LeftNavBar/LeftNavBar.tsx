@@ -4,11 +4,11 @@ export const LeftNavBar = () => {
   return (
     <>
       <section className={styles.contentLeftSite}>
-        <li>HOME</li>
-        <li>FAQS</li>
-        <li>BLOG</li>
-        <li>CONTACT US</li>
-        <li>BUY THEME</li>
+        <a href='#'>HOME</a>
+        <a href='#'>FAQS</a>
+        <a href='#'>BLOG</a>
+        <a href='#'>CONTACT US</a>
+        <a href='#'>BUY THEME</a>
       </section>
     </>
   );
