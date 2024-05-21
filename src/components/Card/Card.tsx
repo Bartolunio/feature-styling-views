@@ -1,5 +1,5 @@
 import styles from './Card.module.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { HiOutlineEye } from 'react-icons/hi';
 
@@ -12,7 +12,7 @@ interface Product {
   image: string;
 }
 
-const Card= () => {
+const Card = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -34,8 +34,8 @@ const Card= () => {
           <div className={styles.cardBody}>
             <h2>{product.title}</h2>
             <p className='price'>${product.price}</p>
-              <HiOutlineEye className={styles.eye} />
-              <button className={styles.buttonAdd}>ADD TO CART</button>
+            <HiOutlineEye className={styles.eye} />
+            <button className={styles.buttonAdd}>ADD TO CART</button>
           </div>
         </div>
       ))}
