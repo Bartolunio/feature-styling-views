@@ -12,12 +12,12 @@ interface Product {
   image: string;
 }
 
-const Card: React.FC = () => {
+const Card= () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     axios
-      .get<Product[]>('https://fakestoreapi.com/products')
+      .get('https://fakestoreapi.com/products')
       .then((response) => {
         setProducts(response.data);
       })
@@ -34,12 +34,8 @@ const Card: React.FC = () => {
           <div className={styles.cardBody}>
             <h2>{product.title}</h2>
             <p className='price'>${product.price}</p>
-           
               <HiOutlineEye className={styles.eye} />
               <button className={styles.buttonAdd}>ADD TO CART</button>
-         
-
-            {/* <p>{product.description}</p> */}
           </div>
         </div>
       ))}

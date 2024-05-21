@@ -10,6 +10,7 @@ import Carousel from '../components/Carousel';
 import CategoryItem from '../components/CategoryItem';
 import Blog from '../components/Blog';
 import Footer from '../components/Footer';
+
 const HomePage = () => {
   return (
     <>

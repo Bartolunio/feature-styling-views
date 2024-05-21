@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import LoginRegisterPanel from './components/LoginRegisterPanel/LoginRegisterPanel';
-import HomePages from './Home/HomePage';
+import HomePage from './Home/HomePage';
 import './index.css';
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<HomePages />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/login-register' element={<LoginRegisterPanel />} />
       </Routes>
     </>
