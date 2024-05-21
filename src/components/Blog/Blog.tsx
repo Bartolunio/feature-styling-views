@@ -1,26 +1,29 @@
 import styles from './Blog.module.css';
+import Marcin from '../../assets/Marcin.jpg';
+import Offert from '../../assets/offert.jpg';
+import comingSoonImage from '../../assets/comingSoon.jpg';
 
 const Blog = () => {
   return (
     <div className={styles.contentBlogWrapper}>
-      <div className={`${styles.shopFounder} ${styles.item}`}>
+      <div className={styles.item}>
         <img
           className={styles.contentShopFounder}
-          src='/assets/Marcin.jpg'
+          src={Marcin}
           alt='Shop Founder - Marcin Bielacha'
         />
       </div>
-      <div className={`${styles.offers} ${styles.item}`}>
+      <div className={styles.item}>
         <img
           className={styles.contentOffers}
-          src='/assets/offert.jpg'
+          src={Offert}
           alt='Offers - Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio in a consequuntur nam perferendis porro nulla'
         />
       </div>
-      <div className={`${styles.comingSoon} ${styles.item}`}>
+      <div className={styles.item}>
         <img
           className={styles.contentComingSoon}
-          src='path/to/comingSoonImage.jpg'
+          src={comingSoonImage}
           alt='Coming Soon'
         />
       </div>

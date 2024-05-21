@@ -1,4 +1,6 @@
 import styles from './Footer.module.css';
+import image1 from '../../assets/telefon.jpg';
+
 
 const Footer = () => {
   return (
@@ -16,7 +18,7 @@ const Footer = () => {
         <div className={styles.latestProducts}>
           <h1 className={styles.titlearticle}>LATEST PRODUCTS</h1>
           <div className={styles.contentLastProducts}>
-            <div className={styles.imageLaptop}></div>
+            <img src={image1} alt='' />
             <div className={styles.info}>
               <h1 className={styles.title}>Phone</h1>
               <p className={styles.price}> $2000</p>
