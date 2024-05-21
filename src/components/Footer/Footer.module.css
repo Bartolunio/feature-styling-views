@@ -9,69 +9,122 @@
 .companyLogo {
   flex: 1;
   width: 25%;
-  & > .logo {
-    height: 50%;
-    width: 100%;
-    background-image: url('../../assets/Logo.png');
-    background-size: cover;
-    background-position: center;
-    width: 25rem;
-  }
+
   & > .information {
     font-size: 2rem;
     padding-left: 5rem;
     color: white;
   }
 }
-
+.logo {
+  height: 50%;
+  width: 100%;
+  background-image: url('../../assets/Logo.png');
+  background-size: cover;
+  background-position: center;
+  width: 25rem;
+}
 .latestProducts {
   width: 25%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-
-  & > .titleContent {
-    color: white;
-    font-size: 2rem;
-    text-align: center;
-  }
+}
+.title {
+  color: white;
+  font-size: 2rem;
+  padding-bottom: 2rem;
+}
+.price {
+  color: white;
+  font-size: 1.5rem;
+}
+.titlearticle {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 .contentLastProducts {
-  flex-direction: column;
+  display: flex;
   flex: 1;
-  background-color: transparent;
-
   & > .imageLaptop {
     height: 50%;
     background-size: cover;
     background-position: center;
-    width: 10rem;
+    width: 12rem;
     background-image: url('../../assets/laptop.jpg');
   }
+
   & > .imagePendrive {
     height: 50%;
     background-size: cover;
     background-position: center;
-    width: 10rem;
+    width: 12rem;
     background-image: url('../../assets/pendrive.jpg');
   }
-  & > .imageRing {
+  & > .imagePhone {
     height: 50%;
     background-size: cover;
     background-position: center;
-    width: 10rem;
-    background-image: url('../../assets/pierscionek.jpg');
+    width: 12rem;
+    background-image: url('../../assets/telefon.jpg');
   }
 }
 
 .bestSeller {
-  flex: 1;
   width: 25%;
-  background-color: #18219ba4;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.contentbestSeller {
+  display: flex;
+  flex: 1;
+}
+
+.imagePatrimony {
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  width: 12rem;
+  background-image: url('../../assets/zeg1.jpg');
+}
+.imageMontbrilliant {
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  width: 10rem;
+  background-image: url('../../assets/zeg2.webp');
+}
+.imageBrliant {
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  width: 10rem;
+  background-image: url('../../assets/zeg3.jpg');
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 50%;
+  padding-left: 2rem;
 }
 .latestNews {
   flex: 1;
   width: 25%;
-  background-color: #0dac0da4;
+}
+.contentLatestNews {
+  & > p {
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    color: orange;
+  }
+  & > p:hover {
+    cursor: pointer;
+    color: rgb(243, 193, 101);
+  }
 }

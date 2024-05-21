@@ -87,7 +87,7 @@
 
   & > .ig {
     border-radius: 50%;
-    background: rgb(253, 187, 45);
+    /* background: rgb(253, 187, 45); */
     background: linear-gradient(
       0deg,
       rgba(253, 187, 45, 1) 25%,
