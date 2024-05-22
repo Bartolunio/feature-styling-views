@@ -1,0 +1,24 @@
+.shoppingCart {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shoppingCartItems {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.productContent {
+  display: flex;
+}
+.removeButton,
+.productImage,
+h2,
+.quantityControl,
+.productPrice {
+  flex: 1;
+}
+
+.quantityButton {
+  margin: 0 5px;
+}

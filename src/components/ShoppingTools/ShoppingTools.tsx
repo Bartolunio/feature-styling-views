@@ -4,8 +4,8 @@ import { Ri24HoursLine } from 'react-icons/ri';
 import { IoIosArrowDown } from 'react-icons/io';
 import { FaFacebook } from 'react-icons/fa';
 import { RiInstagramFill } from 'react-icons/ri';
-import { AiFillTwitterCircle } from "react-icons/ai";
-
+import { AiFillTwitterCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
 
@@ -39,18 +39,20 @@ const ShoppingTools = () => {
               <div className={styles.ourCommunity}>
                 <FaFacebook className={styles.fb} />
                 <RiInstagramFill className={styles.ig} />
-                <AiFillTwitterCircle className={styles.twit}/>
+                <AiFillTwitterCircle className={styles.twit} />
               </div>
             </div>
           )}
         </div>
-        <div className={styles.shoppingCart}>
-          <FiShoppingCart className={styles.icon} />
-          <div className={styles.informationShoppingCart}>
-            <p>0 ITEMS</p>
-            <p>$0.00</p>
-          </div>
-        </div>
+        <>
+          <Link to='/myshoppingcart' className={styles.shoppingCart}>
+            <FiShoppingCart className={styles.icon} />
+            <div className={styles.informationShoppingCart}>
+              <p>0 ITEMS</p>
+              <p>$0.00</p>
+            </div>
+          </Link>
+        </>
       </div>
     </>
   );

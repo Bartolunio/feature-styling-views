@@ -1,6 +1,10 @@
 import styles from './Footer.module.css';
-import image1 from '../../assets/telefon.jpg';
-
+import Phone from '@assets/telefon.jpg';
+import flashDisck from '@assets/pendrive.jpg';
+import Laptop from '@assets/laptop.jpg';
+import Patrimony from '@assets/zeg1.jpg';
+import Montbrilliant from '@assets/zeg2.webp';
+import Brliant from '@assets/zeg3.jpg';
 
 const Footer = () => {
   return (
@@ -14,25 +18,24 @@ const Footer = () => {
             soluta velit
           </p>
         </div>
-
         <div className={styles.latestProducts}>
           <h1 className={styles.titlearticle}>LATEST PRODUCTS</h1>
           <div className={styles.contentLastProducts}>
-            <img src={image1} alt='' />
+            <img src={Phone} className={styles.image} />
             <div className={styles.info}>
               <h1 className={styles.title}>Phone</h1>
               <p className={styles.price}> $2000</p>
             </div>
           </div>
           <div className={styles.contentLastProducts}>
-            <div className={styles.imagePendrive}></div>
+            <img src={flashDisck} className={styles.image} />
             <div className={styles.info}>
               <h1 className={styles.title}>Flash drive</h1>
               <p className={styles.price}>$100</p>
             </div>
           </div>
           <div className={styles.contentLastProducts}>
-            <div className={styles.imagePhone}></div>
+            <img src={Laptop} className={styles.image} />
             <div className={styles.info}>
               <h1 className={styles.title}>Phone</h1>
               <p className={styles.price}>$2000</p>
@@ -42,24 +45,22 @@ const Footer = () => {
 
         <div className={styles.bestSeller}>
           <h1 className={styles.titlearticle}>TOP RATED PRODUCTS</h1>
-
           <div className={styles.contentbestSeller}>
-            <div className={styles.imagePatrimony}></div>
+            <img src={Patrimony} className={styles.image} />
             <div className={styles.info}>
               <h1 className={styles.title}>Patrimony Ultra Calibre</h1>
               <p className={styles.price}>$8400</p>
             </div>
           </div>
-
           <div className={styles.contentbestSeller}>
-            <div className={styles.imageMontbrilliant}></div>
+            <img src={Montbrilliant} className={styles.image} />
             <div className={styles.info}>
               <h1 className={styles.title}>Montbrilliant</h1>
               <p className={styles.price}>$5050</p>
             </div>
           </div>
           <div className={styles.contentbestSeller}>
-            <div className={styles.imageBrliant}></div>
+            <img src={Brliant} className={styles.image} />
             <div className={styles.info}>
               <h1 className={styles.title}>Montbrilliant</h1>
               <p className={styles.price}>$2100</p>
@@ -72,9 +73,9 @@ const Footer = () => {
           <div className={styles.contentLatestNews}>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
             <p>Aliquam nisi assumenda voluptatem sint commodi blanditiis.</p>
-            <p>porro fugiat enim, aperiam facere recusandae suscipit.</p>
+            <p>Porro fugiat enim, aperiam facere recusandae suscipit.</p>
             <p>
-              Voluptatum rem exercitationem excepturi sunt fugit quas possimus,
+              Voluptatum rem exercitationem excepturi sunt fugit quas possimus.
             </p>
           </div>
         </div>

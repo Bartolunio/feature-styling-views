@@ -5,20 +5,19 @@
   height: 50%;
   justify-content: center;
   background-color: transparent;
-
-  & > .shoppingCart {
-    color: white;
-    padding-left: 2rem;
-    align-items: center;
-    display: flex;
-    background-color: transparent;
-    border: none;
-    height: 100%;
-    width: 35%;
-    font-size: 3rem;
-  }
 }
-
+.shoppingCart {
+  text-decoration: none;
+  color: white;
+  padding-left: 2rem;
+  align-items: center;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 35%;
+  font-size: 3rem;
+}
 .informationShoppingCart {
   padding-left: 2rem;
   & > p {

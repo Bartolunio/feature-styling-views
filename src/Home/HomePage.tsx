@@ -1,15 +1,14 @@
 import '../App.css';
 
-import LeftNavBar from '../components/LeftNavBar';
-import RightNavBar from '../components/RigtNavBar';
-import SearchBar from '../components/SearchBar';
-import ShoppingTools from '../components/ShoppingTools';
-import Navigation from '../components/Navigation';
-import Card from '../components/Card';
-import Carousel from '../components/Carousel';
-import CategoryItem from '../components/CategoryItem';
-import Blog from '../components/Blog';
-import Footer from '../components/Footer';
+import LeftNavBar from '@components/LeftNavBar';
+import RightNavBar from '@components/RigtNavBar';
+import SearchBar from '@components/SearchBar';
+import ShoppingTools from '@components/ShoppingTools';
+import Card from '@components/Card';
+import Carousel from '@components/Carousel';
+import CategoryItem from '@components/CategoryItem';
+import Blog from '@components/Blog';
+import Footer from '@components/Footer';
 
 const HomePage = () => {
   return (
@@ -34,11 +33,6 @@ const HomePage = () => {
             <div className='header-tools'>
               <ShoppingTools />
             </div>
-          </div>
-          <div className='container-main-navigation'>
-            <nav className='navigation-menu'>
-              <Navigation />
-            </nav>
           </div>
           <div className='container-slider'>
             <Carousel />

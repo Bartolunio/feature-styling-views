@@ -49,28 +49,10 @@
 .contentLastProducts {
   display: flex;
   flex: 1;
-  & > .imageLaptop {
-    height: 50%;
-    background-size: cover;
-    background-position: center;
-    width: 12rem;
-    background-image: url('../../assets/laptop.jpg');
-  }
-
-  & > .imagePendrive {
-    height: 50%;
-    background-size: cover;
-    background-position: center;
-    width: 12rem;
-    background-image: url('../../assets/pendrive.jpg');
-  }
-  & > .imagePhone {
-    height: 50%;
-    background-size: cover;
-    background-position: center;
-    width: 12rem;
-    background-image: url('../../assets/telefon.jpg');
-  }
+}
+.image {
+  margin: 1rem;
+  width: 13rem;
 }
 
 .bestSeller {
@@ -85,33 +67,14 @@
   flex: 1;
 }
 
-.imagePatrimony {
-  height: 50%;
-  background-size: cover;
-  background-position: center;
-  width: 12rem;
-  background-image: url('../../assets/zeg1.jpg');
-}
-.imageMontbrilliant {
-  height: 50%;
-  background-size: cover;
-  background-position: center;
-  width: 10rem;
-  background-image: url('../../assets/zeg2.webp');
-}
-.imageBrliant {
-  height: 50%;
-  background-size: cover;
-  background-position: center;
-  width: 10rem;
-  background-image: url('../../assets/zeg3.jpg');
-}
 .info {
   display: flex;
   flex-direction: column;
   color: white;
   width: 50%;
   padding-left: 2rem;
+  /* background-size: cover;
+  background-position: center; */
 }
 .latestNews {
   flex: 1;
