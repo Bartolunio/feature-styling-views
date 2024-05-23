@@ -18,6 +18,8 @@
     text-decoration: none;
   }
   & > a:hover {
+    color: orange;
+    cursor: pointer;
     background-color: #3b3b3b;
   }
 }
