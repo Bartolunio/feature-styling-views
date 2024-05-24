@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 import { HiOutlineEye } from 'react-icons/hi';
 import styles from './Card.module.css';
 
@@ -12,20 +11,8 @@ interface Product {
   image: string;
 }
 
-const Card = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+const Card = ({ product }) => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
-  useEffect(() => {
-    axios
-      .get('https://fakestoreapi.com/products')
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error('Błąd pobierania danych:', error);
-      });
-  }, []);
 
   const handleEyeClick = (product: Product) => {
     setSelectedProduct(product);
@@ -37,7 +24,7 @@ const Card = () => {
 
   return (
     <>
-      {products.map((product) => (
+      {product.map((product) => (
         <div key={product.id} className={styles.card}>
           <img
             src={product.image}

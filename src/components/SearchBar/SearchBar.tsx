@@ -1,22 +1,28 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 import { IoSearchOutline } from 'react-icons/io5';
 import styles from './SearchBar.module.css';
 
-const SearchBar = () => {
-  const [showPlaceholder, setShowPlaceholder] = useState(true);
+const SearchBar = ({ product, setFilteredItems }) => {
   const [inputValue, setInputValue] = useState('');
+  const [showPlaceholder, setShowPlaceholder] = useState(true);
+
+  useEffect(() => {
+    if (inputValue === '') {
+      setFilteredItems(product);
+    } else {
+      setFilteredItems(
+        product.filter((product) =>
+          product?.title?.toLowerCase().includes(inputValue.toLowerCase())
+        )
+      );
+    }
+  }, [inputValue, product, setFilteredItems]);
 
   const handleClick = () => {
     setShowPlaceholder(false);
     setTimeout(() => {
       setShowPlaceholder(true);
     }, 1000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setInputValue(value);
   };
 
   return (
@@ -27,7 +33,7 @@ const SearchBar = () => {
         placeholder={showPlaceholder ? 'Search for products' : ''}
         onClick={handleClick}
         value={inputValue}
-        onChange={handleChange}
+        onChange={(e) => setInputValue(e.target.value)}
       />
       <button>
         <IoSearchOutline />
