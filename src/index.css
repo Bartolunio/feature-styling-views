@@ -19,15 +19,21 @@ html {
 }
 
 .container {
-  background-color: #222;
+  flex-direction: column;
+  display: flex;
+  background-image: url('/src/assets/tło.jpg');
   width: 100%;
-  overflow: auto;
-  min-height: 100vh;
+  height: 100%;
 }
+
+/* zapytac sie kacpra czy tak mozna zrobic WAZNE !!!!!!!! position fixed i magin top w header main section*/
 .container-navBar {
+  position: fixed;
+  z-index: 1000;
   background-color: #333;
   display: flex;
-  height: 5%;
+  height: 10rem;
+  width: 100%;
 }
 .left-navBar {
   padding: 0 30rem 0 1rem;
@@ -43,10 +49,11 @@ html {
 }
 
 .header-main-section {
+  margin-top: 10rem;
   justify-content: space-around;
   padding: 1rem;
   background-color: #333;
-  height: 15%;
+  height: 20rem;
   display: flex;
 }
 
@@ -56,12 +63,11 @@ html {
   background-color: #333;
   display: flex;
   padding: 2rem;
-
-  & > .search-input {
-    background-color: #333;
-    width: 100%;
-    height: 100%;
-  }
+}
+.search-input {
+  background-color: #333;
+  width: 100%;
+  height: 100%;
 }
 
 .logo-area {
@@ -69,8 +75,7 @@ html {
   background-color: transparent;
   background-size: cover;
   background-position: center;
-  width: 25rem;
-  /* height: 100%; */
+  width: 32rem;
   display: flex;
 }
 .header-tools {
@@ -79,49 +84,40 @@ html {
   background-color: #333;
   display: flex;
   padding: 2rem;
-  & > .support {
-    width: 80%;
-    height: 100%;
-  }
-  & > .shopping-cart {
-    width: 20%;
-    height: 100%;
-  }
 }
-
-.container-main-navigation {
-  background-color: #333;
-  height: 5%;
-  display: flex;
+.support {
+  width: 80%;
+  height: 100%;
 }
-.navigation-menu {
-  display: flex;
-  margin: 0 auto;
-  width: 50%;
+.shopping-cart {
+  width: 20%;
   height: 100%;
 }
 
 .container-slider {
-  height: 30%;
+  height: 50rem;
   background-color: #252396;
 }
 
 .product-category {
-  background-color: #333;
+  margin-bottom: 5rem;
+  /* background-color: #333; */
+  backdrop-filter: blur(20px);
   display: flex;
-  height: 30%;
 }
 
 .container-selling-item {
   display: flex;
   flex-direction: column;
   width: 100%;
-  & > .title-selling-items {
-    color: white;
-    background-color: #333;
-    font-size: 3rem;
-    text-align: center;
-  }
+}
+.title-selling-items {
+  color: white;
+  backdrop-filter: blur(20px);
+  /* background-color: #222; */
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .card-selling-items {
@@ -133,8 +129,10 @@ html {
 
 .container-blog-wrapper {
   display: flex;
-  height: 30%;
-  background-color: #333;
+  margin-top: 2rem;
+  height: 60rem;
+  /* background-color: #333; */
+  backdrop-filter: blur(20px);
   flex-direction: column;
   & > .title-blog {
     color: white;
@@ -149,6 +147,5 @@ html {
 
 .container-fotter {
   display: flex;
-  height: 5%;
-  background-color: blueviolet;
+  height: 20%;
 }

@@ -1,22 +1,30 @@
 .contentBlogWrapper {
+  position: relative;
+  display: flex;
   width: 100%;
   height: 100%;
-  display: flex;
   justify-content: space-between;
-  & > div {
-    flex: 1;
-    margin: 2rem;
-    background-color: #271b96;
-  }
 }
-.item {
-  transition: transform 0.3s ease;
+.container {
+  flex: 1;
+  display: flex;
+  position: relative;
+  display: inline-block;
 }
 
-.item:hover {
-  transform: scale(1.05);
+.items {
+  flex: 1;
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
 }
 
-
-2008 196 156tys
-2024 430 344tys
+.container p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+}

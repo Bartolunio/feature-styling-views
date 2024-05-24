@@ -1,0 +1,144 @@
+.content {
+  padding-top: 2rem;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../assets/tło.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navigate {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.handleGoBack {
+  color: white;
+  font-size: 3rem;
+}
+.handleGoBack:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 2rem;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+}
+.totalAmount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  height: 5rem;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
+}
+.shoppingCart {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shoppingCartItems {
+  height: 10rem;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
+}
+
+.productContent {
+  display: flex;
+  align-items: center;
+}
+
+.productContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  & > span {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    font-size: 2rem;
+    height: 100%;
+  }
+
+  & > span:hover {
+    cursor: pointer;
+    color: red;
+  }
+
+  & > h2 {
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    height: 100%;
+    width: 30%;
+    padding-left: 2rem;
+    margin-left: 2rem;
+    align-items: center;
+  }
+}
+
+.productImage {
+  margin-left: 2rem;
+  height: 100%;
+  width: 10%;
+  background-color: #a70b0b;
+}
+
+.quantityControl {
+  display: flex;
+  margin-left: 2rem;
+  height: 100%;
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+
+  & > span {
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  & > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  & > button:hover {
+    cursor: pointer;
+    background-color: orange;
+  }
+}
+
+.productPrice {
+  color: white;
+  display: flex;
+  font-size: 2rem;
+  align-items: center;
+  height: 100%;
+  margin-left: 2rem;
+  margin-left: auto;
+}

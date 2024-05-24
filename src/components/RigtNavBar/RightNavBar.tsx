@@ -16,13 +16,48 @@ const RightNavBar = () => {
   return (
     <>
       <section className={styles.contentRightSite}>
-        <div className={styles.contentLogin}>
+        <div className={styles.contentLogin} onClick={handleLoginClick}>
           <div>
             <FiLogIn />
           </div>
-          <button className={styles.login} onClick={handleLoginClick}>
-            LOGIN/REGISTER
+          <a href='' className={styles.login}>
+            LOGIN / REGISTER
+          </a>
+        </div>
+        <div className={styles.contentWishList}>
+          <div>
+            <IoHeartOutline />
+          </div>
+          <a href='' className={styles.wishlist}>
+            WISHLIST
+          </a>
+        </div>
+
+        <div className={styles.contentSociety}>
+          <button>
+            <FaTwitter />
           </button>
+          <button>
+            <FaFacebookF />
+          </button>
+          <button>
+            <FaPinterestP />
+          </button>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default RightNavBar;
+{
+  /* <>
+      <section className={styles.contentRightSite}>
+        <div className={styles.contentLogin} onClick={handleLoginClick}>
+          <div>
+            <FiLogIn />
+          </div>
+          <button className={styles.login}>LOGIN / REGISTER</button>
         </div>
         <div className={styles.contentWishList}>
           <div>
@@ -42,8 +77,5 @@ const RightNavBar = () => {
           </button>
         </div>
       </section>
-    </>
-  );
-};
-
-export default RightNavBar;
+    </> */
+}
