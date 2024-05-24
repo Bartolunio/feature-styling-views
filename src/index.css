@@ -101,7 +101,6 @@ html {
 
 .product-category {
   margin-bottom: 5rem;
-  /* background-color: #333; */
   backdrop-filter: blur(20px);
   display: flex;
 }
@@ -114,7 +113,6 @@ html {
 .title-selling-items {
   color: white;
   backdrop-filter: blur(20px);
-  /* background-color: #222; */
   font-size: 3rem;
   text-align: center;
   margin-bottom: 2rem;
@@ -131,7 +129,6 @@ html {
   display: flex;
   margin-top: 2rem;
   height: 60rem;
-  /* background-color: #333; */
   backdrop-filter: blur(20px);
   flex-direction: column;
   & > .title-blog {

@@ -1,9 +1,7 @@
-
 import { useState } from 'react';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import { FaRegEye } from 'react-icons/fa';
 import { FaRegEyeSlash } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 
 import styles from './LoginRegisterPanel.module.css';
 
@@ -11,13 +9,12 @@ const LoginRegisterPanel = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
   const handleGoBack = () => {
-    navigate(-1);
+    window.history.back();
   };
   return (
     <>

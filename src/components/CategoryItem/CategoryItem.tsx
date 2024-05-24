@@ -1,8 +1,8 @@
 import styles from './CategoryItem.module.css';
-import imageHoodie from '../../assets/bluza.jpg';
-import imageHandbag from '../../assets/torebka.jpg';
-import imageShirt from '../../assets/koszulka.webp';
-import imageElectronics from '../../assets/electronics.jpg';
+import imageHoodie from '@assets/bluza.jpg';
+import imageHandbag from '@assets/torebka.jpg';
+import imageShirt from '@assets/koszulka.webp';
+import imageElectronics from '@assets/electronics.jpg';
 
 const CategoryItem = () => {
   const categories = [
@@ -24,7 +24,11 @@ const CategoryItem = () => {
     <div className={styles.contentCategory}>
       {categories.map((category, index) => (
         <div className={styles.categoryItem} key={index}>
-          <img src={category.imageSrc} alt={category.name} className={styles.imageContainer} />
+          <img
+            src={category.imageSrc}
+            alt={category.name}
+            className={styles.imageContainer}
+          />
           <div className={styles.textOverlay}>
             <p className={styles.name}>{category.name}</p>
             <p className={styles.quantity}>{category.quantity}</p>

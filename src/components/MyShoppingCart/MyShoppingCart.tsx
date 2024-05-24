@@ -2,12 +2,10 @@ import { useState } from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import { IoArrowBackSharp } from 'react-icons/io5';
 import styles from './MyShoppingCart.module.css';
-import { useNavigate } from 'react-router-dom';
-const MyShoppingCart = () => {
-  const navigate = useNavigate();
 
+const MyShoppingCart = () => {
   const handleGoBack = () => {
-    navigate(-1);
+    window.history.back();
   };
   const initialQuantities = {
     1: 1,
