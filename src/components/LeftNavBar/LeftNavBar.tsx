@@ -13,10 +13,9 @@ const LeftNavBar = () => {
         <Link to='/' onClick={overload}>
           HOME
         </Link>
-        <Link to='/faqs'>FAQS</Link>
+        <Link to='/FAQS'>FAQS</Link>
         <Link to='/Blog'>BLOG</Link>
-        <Link to='/contact'>CONTACT US</Link>
-        <Link to='/buy'>BUY THEME</Link>
+        <Link to='/ContactUs'>CONTACT US</Link>
       </section>
     </>
   );
