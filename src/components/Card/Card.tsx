@@ -50,7 +50,7 @@ const Card = ({ product }) => {
             <p>Description: {selectedProduct.description}</p>
             <p>Category: {selectedProduct.category}</p>
             <button onClick={handleCloseModal}>Close</button>
-            <button onClick={addingToCart}>ADD TO CART</button>
+            {/* <button onClick={addingToCart}>ADD TO CART</button> */}
           </div>
         </div>
       )}
