@@ -11,7 +11,11 @@ interface Product {
   image: string;
 }
 
-const Card = ({ product }) => {
+interface CardProps {
+  products: Product[];
+}
+
+const Card = ({ products }: CardProps) => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const handleEyeClick = (product: Product) => {
@@ -24,7 +28,7 @@ const Card = ({ product }) => {
 
   return (
     <>
-      {product.map((product) => (
+      {products.map((product) => (
         <div key={product.id} className={styles.card}>
           <img
             src={product.image}
@@ -50,7 +54,7 @@ const Card = ({ product }) => {
             <p>Description: {selectedProduct.description}</p>
             <p>Category: {selectedProduct.category}</p>
             <button onClick={handleCloseModal}>Close</button>
-            {/* <button onClick={addingToCart}>ADD TO CART</button> */}
+            <button onClick={handleCloseModal}>ADD TO CART</button>
           </div>
         </div>
       )}

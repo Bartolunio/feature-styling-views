@@ -33,7 +33,9 @@ const SearchBar = ({ product, setFilteredItems }) => {
         placeholder={showPlaceholder ? 'Search for products' : ''}
         onClick={handleClick}
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+        }}
       />
       <button>
         <IoSearchOutline />

@@ -26,7 +26,6 @@ html {
   height: 100%;
 }
 
-/* zapytac sie kacpra czy tak mozna zrobic WAZNE !!!!!!!! position fixed i magin top w header main section*/
 .container-navBar {
   position: fixed;
   z-index: 1000;
@@ -36,15 +35,8 @@ html {
   width: 100%;
 }
 .left-navBar {
-  padding: 0 30rem 0 1rem;
-  width: 50%;
   height: 100%;
-  display: flex;
-}
-.right-navBar {
-  padding: 0 1rem 0 30rem;
-  width: 50%;
-  height: 100%;
+  width: 100%;
   display: flex;
 }
 
@@ -96,6 +88,7 @@ html {
 
 .container-slider {
   height: 50rem;
+  width: 100%;
 }
 
 .product-category {

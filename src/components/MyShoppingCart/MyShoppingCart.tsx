@@ -3,6 +3,10 @@ import { RiCloseFill } from 'react-icons/ri';
 import { IoArrowBackSharp } from 'react-icons/io5';
 import styles from './MyShoppingCart.module.css';
 
+type QuantitiesModel = {
+  [key: number]: number;
+};
+
 const MyShoppingCart = () => {
   const handleGoBack = () => {
     window.history.back();
@@ -16,16 +20,17 @@ const MyShoppingCart = () => {
     6: 1,
   };
 
-  const [quantities, setQuantities] = useState(initialQuantities);
+  const [quantities, setQuantities] =
+    useState<QuantitiesModel>(initialQuantities);
 
-  const handleIncrease = (id) => {
+  const handleIncrease = (id: number) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
-      [id]: prevQuantities[id] + 1,
+      [id]: (prevQuantities[id] as number) + 1,
     }));
   };
 
-  const handleDecrease = (id) => {
+  const handleDecrease = (id: number) => {
     setQuantities((prevQuantities) => {
       if (prevQuantities[id] > 1) {
         return {

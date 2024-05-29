@@ -15,7 +15,7 @@ import '../App.css';
 const HomePage = () => {
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
-  
+
   const products = useFetchProducts();
 
   useEffect(() => {
@@ -32,9 +32,6 @@ const HomePage = () => {
           <nav className='container-navBar'>
             <div className='left-navBar'>
               <LeftNavBar />
-            </div>
-            <div className='right-navBar'>
-              <RightNavBar />
             </div>
           </nav>
           <div className='header-main-section'>
@@ -60,7 +57,7 @@ const HomePage = () => {
           <div className='container-selling-item'>
             <h1 className='title-selling-items'>Best Selling Products</h1>
             <div className='card-selling-items'>
-              <Card product={filteredItems} />
+              <Card products={filteredItems} />
             </div>
           </div>
           <section className='container-blog-wrapper'>

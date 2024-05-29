@@ -1,6 +1,6 @@
 import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-// import zdj from '../../assets/Marcin.jpg';
+// import zdj from '../../assets/dupa.webp';
 // import zdj1 from '../../assets/bluza.jpg';
 // import zdj2 from '../../assets/torebka.jpg';
 import styles from './Carousel.module.css';
@@ -8,8 +8,8 @@ import styles from './Carousel.module.css';
 const CustomCarousel = () => {
   return (
     <div className={styles.contentCarousel}>
-      <ResponsiveCarousel>
-        {/* <div>
+      {/* <ResponsiveCarousel>
+        <div>
           <img src={zdj} alt='Marcin' />
           <p className='legend'>Legend 1</p>
         </div>
@@ -20,8 +20,8 @@ const CustomCarousel = () => {
         <div>
           <img src={zdj2} alt='Torebka' />
           <p className='legend'>Legend 3</p>
-        </div> */}
-      </ResponsiveCarousel>
+        </div>
+      </ResponsiveCarousel> */}
     </div>
   );
 };

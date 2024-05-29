@@ -1,2 +1,6 @@
-
-
+.contentCarousel {
+  & > div {
+    width: 50rem;
+    height: auto;
+  }
+}
