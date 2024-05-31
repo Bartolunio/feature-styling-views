@@ -1,3 +1,24 @@
+.titleSellingItems {
+  color: white;
+  backdrop-filter: blur(20px);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.containerSellingItem {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardSellingItems {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
 .card {
   display: flex;
   flex-direction: row;
@@ -5,7 +26,7 @@
   margin: 1rem;
   background-color: #333;
   height: 23rem;
-  width: 23rem;
+  width: 30rem;
   flex-basis: calc(25% - 20px);
   border: 1px solid black;
   transition: transform 0.3s ease;
@@ -17,7 +38,6 @@
 }
 
 .card::after {
-  content: 'ADD TO CART';
   padding-top: 1.25em;
   padding-left: 1.25em;
   position: absolute;
@@ -45,16 +65,18 @@
 .cardBody {
   width: 50%;
   height: 100%;
-  & > h2 {
-    font-size: 1.5rem;
-    color: white;
-    text-align: center;
-  }
-  & > p {
-    font-size: 2rem;
-    color: orange;
-    text-align: center;
-  }
+}
+
+.cardBody > h2 {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.cardBody > p {
+  font-size: 2rem;
+  color: orange;
+  text-align: center;
 }
 
 .buttonAdd {
@@ -114,6 +136,7 @@
   height: 20rem;
   margin-bottom: 2rem;
 }
+
 .modalContent button {
   margin: 2rem 2rem 0 2rem;
   background-color: orange;

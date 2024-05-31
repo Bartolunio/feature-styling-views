@@ -91,3 +91,7 @@
     color: rgb(243, 193, 101);
   }
 }
+.containerFotter {
+  display: flex;
+  height: 20%;
+}

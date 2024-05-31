@@ -1,8 +1,8 @@
 .contentShoppingTools {
   display: flex;
-  margin: 2.5rem 0 0 0;
-  width: 100%;
-  height: 50%;
+  margin: 4rem 0 0 0;
+  height: 40%;
+  width: 33%;
   justify-content: center;
   background-color: transparent;
 }
@@ -24,6 +24,7 @@
     font-size: 1.5rem;
   }
 }
+
 .support {
   position: relative;
   color: white;

@@ -44,3 +44,9 @@
   text-align: end;
   padding-right: 2rem;
 }
+
+.productCategory {
+  margin-bottom: 5rem;
+  backdrop-filter: blur(20px);
+  display: flex;
+}

@@ -21,21 +21,23 @@ const CategoryItem = () => {
   ];
 
   return (
-    <div className={styles.contentCategory}>
-      {categories.map((category, index) => (
-        <div className={styles.categoryItem} key={index}>
-          <img
-            src={category.imageSrc}
-            alt={category.name}
-            className={styles.imageContainer}
-          />
-          <div className={styles.textOverlay}>
-            <p className={styles.name}>{category.name}</p>
-            <p className={styles.quantity}>{category.quantity}</p>
+    <section className={styles.productCategory}>
+      <div className={styles.contentCategory}>
+        {categories.map((category, index) => (
+          <div className={styles.categoryItem} key={index}>
+            <img
+              src={category.imageSrc}
+              alt={category.name}
+              className={styles.imageContainer}
+            />
+            <div className={styles.textOverlay}>
+              <p className={styles.name}>{category.name}</p>
+              <p className={styles.quantity}>{category.quantity}</p>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

@@ -28,8 +28,11 @@ const Card = ({ products }: CardProps) => {
 
   return (
     <>
-      {products.map((product) => (
-        <div key={product.id} className={styles.card}>
+  <h1 className={styles.titleSellingItems}>Best Selling Products</h1>
+  <div className={styles.containerSellingItem}>
+    {products.map((product) => (
+      <div key={product.id}>
+        <div className={styles.card}>
           <img
             src={product.image}
             alt={product.title}
@@ -44,24 +47,26 @@ const Card = ({ products }: CardProps) => {
             />
           </div>
         </div>
-      ))}
-      {selectedProduct && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <h2>{selectedProduct.title}</h2>
-            <img src={selectedProduct.image} />
-            <p>Price: ${selectedProduct.price}</p>
-            <p>Description: {selectedProduct.description}</p>
-            <p>Category: {selectedProduct.category}</p>
-            <button onClick={handleCloseModal}>Close</button>
-            <button onClick={handleCloseModal}>ADD TO CART</button>
-          </div>
-        </div>
-      )}
-      {selectedProduct && (
-        <div className={styles.backdrop} onClick={handleCloseModal} />
-      )}
-    </>
+      </div>
+    ))}
+  </div>
+  {selectedProduct && (
+    <div className={styles.modal}>
+      <div className={styles.modalContent}>
+        <h2>{selectedProduct.title}</h2>
+        <img src={selectedProduct.image} />
+        <p>Price: ${selectedProduct.price}</p>
+        <p>Description: {selectedProduct.description}</p>
+        <p>Category: {selectedProduct.category}</p>
+        <button onClick={handleCloseModal}>Close</button>
+        <button onClick={handleCloseModal}>ADD TO CART</button>
+      </div>
+    </div>
+  )}
+  {selectedProduct && (
+    <div className={styles.backdrop} onClick={handleCloseModal} />
+  )}
+</>
   );
 };
 
