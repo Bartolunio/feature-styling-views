@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import NavBar from '@components/NavBar';
 import SearchBar from '@components/SearchBar';
@@ -17,6 +17,12 @@ const HomePage = () => {
 
   const products = useFetchProducts();
 
+const blogRef = useRef<HTMLElement>(null);
+
+const handleBlogClick = ()=>{
+  blogRef.current?.scrollIntoView({behavior: 'smooth'});
+}
+
   useEffect(() => {
     if (products.length > 0) {
       setItems(products);
@@ -28,7 +34,7 @@ const HomePage = () => {
     <>
       <div className='App'>
         <div className='container'>
-          <NavBar />
+          <NavBar handleClick={handleBlogClick} />
           <div className='header-main-section'>
             <div className='search-area'>
               <div className='search-input'>
@@ -43,7 +49,7 @@ const HomePage = () => {
           </div>
           <CategoryItem />
           <Card products={filteredItems} />
-          <Blog />
+          <Blog ref={blogRef}/>
           <Footer />
         </div>
       </div>

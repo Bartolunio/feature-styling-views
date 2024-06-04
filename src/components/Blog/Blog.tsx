@@ -2,12 +2,12 @@ import styles from './Blog.module.css';
 import Marcin from '@assets/Marcin.jpg';
 import Offert from '@assets/offert.jpg';
 import comingSoonImage from '@assets/comingSoon.jpg';
+import { forwardRef } from 'react';
 
-const Blog = () => {
+const Blog = forwardRef<HTMLElement>((_,ref) => {
   return (
-    <section className={styles.containerBlogWrapper}>
+    <section ref={ref} className={styles.containerBlogWrapper}>
       <h1 className={styles.titleBlog}>Latest news</h1>
-
       <div className={styles.contentBlogWrapper}>
         <div className={styles.container}>
           <img className={styles.items} src={Marcin} />
@@ -26,5 +26,5 @@ const Blog = () => {
       </div>
     </section>
   );
-};
+});
 export default Blog;

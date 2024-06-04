@@ -8,7 +8,7 @@ import { FaTwitter } from 'react-icons/fa';
 
 import styles from './NavBar.module.css';
 
-const NavBar = () => {
+const NavBar = ({handleClick}) => {
   const navigate = useNavigate();
   const overload = () => {
     window.location.reload();
@@ -27,7 +27,7 @@ const NavBar = () => {
             HOME
           </Link>
           <Link to='/FAQS'>FAQS</Link>
-          <Link to='/Blog'>BLOG</Link>
+          <button onClick={handleClick}>BLOG</button>
           <Link to='/ContactUs'>CONTACT US</Link>
         </section>
         <section className={styles.contentRightSite}>
