@@ -15,6 +15,7 @@ const ShoppingTools = () => {
   return (
     <>
       <div className={styles.contentShoppingTools}>
+      
         <div
           className={styles.support}
           onMouseEnter={() => setShowInfo(true)}
@@ -44,15 +45,13 @@ const ShoppingTools = () => {
             </div>
           )}
         </div>
-        <>
-          <Link to='/myshoppingcart' className={styles.shoppingCart}>
-            <FiShoppingCart className={styles.icon} />
-            <div className={styles.informationShoppingCart}>
-              <p>0 ITEMS</p>
-              <p>$0.00</p>
-            </div>
-          </Link>
-        </>
+        <Link to='/myshoppingcart' className={styles.shoppingCart}>
+          <FiShoppingCart className={styles.icon} />
+          <div className={styles.informationShoppingCart}>
+            <p>0 ITEMS</p>
+            <p>$0.00</p>
+          </div>
+        </Link>
       </div>
     </>
   );

@@ -108,3 +108,8 @@
   display: block;
   opacity: 1;
 }
+@media (max-width: 1200px) {
+  .contentShoppingTools {
+    display: none;
+  }
+}

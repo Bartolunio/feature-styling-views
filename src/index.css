@@ -48,18 +48,16 @@ html {
   height: 100%;
 }
 
-.header-tools {
-  width: 33.33%;
-  height: 100%;
-  background-color: #333;
-  display: flex;
-  padding: 2rem;
-}
-.support {
-  width: 80%;
-  height: 100%;
-}
-.shopping-cart {
-  width: 20%;
-  height: 100%;
+@media (max-width: 1200px) {
+  .header-main-section {
+    margin-top: 0;
+    height: 15rem;
+  }
+  .search-area {
+    display: none;
+  }
+  .logoArea {
+    height: 100;
+    width: 20%;
+  }
 }

@@ -8,20 +8,21 @@ import CategoryItem from '@components/CategoryItem';
 import Blog from '@components/Blog';
 import Footer from '@components/Footer';
 import useFetchProducts from '../components/CardService';
-
 import logo from '../assets/Logo.png';
+
 import '../App.css';
 const HomePage = () => {
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
-
   const products = useFetchProducts();
 
-const blogRef = useRef<HTMLElement>(null);
 
-const handleBlogClick = ()=>{
-  blogRef.current?.scrollIntoView({behavior: 'smooth'});
-}
+
+  const blogRef = useRef<HTMLElement>(null);
+
+  const handleBlogClick = () => {
+    blogRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     if (products.length > 0) {
@@ -49,8 +50,9 @@ const handleBlogClick = ()=>{
           </div>
           <CategoryItem />
           <Card products={filteredItems} />
-          <Blog ref={blogRef}/>
+          <Blog ref={blogRef} />
           <Footer />
+       
         </div>
       </div>
     </>

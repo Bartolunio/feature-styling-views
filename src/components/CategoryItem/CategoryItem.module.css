@@ -50,3 +50,18 @@
   backdrop-filter: blur(20px);
   display: flex;
 }
+@media (max-width: 1200px) {
+  .categoryItem {
+    height: 50rem;
+    flex: 1 1 45%; 
+    margin: 2.5%;
+  }
+}
+
+@media (max-width: 960px) {
+  .categoryItem {
+    height: 35rem;
+    flex: 1 1 100%; 
+    margin: 2rem 0;
+  }
+}
