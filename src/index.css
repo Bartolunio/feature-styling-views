@@ -19,9 +19,9 @@ html {
 }
 
 .container {
+  background-color: #222;
   flex-direction: column;
   display: flex;
-  background-image: url('/src/assets/tło.jpg');
   width: 100%;
   height: 100%;
 }

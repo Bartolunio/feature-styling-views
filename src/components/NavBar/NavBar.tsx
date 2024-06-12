@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
-import { IoHeartOutline } from 'react-icons/io5';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaPinterestP } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
@@ -37,14 +36,6 @@ const NavBar = ({handleClick}) => {
             </div>
             <Link to='' className={styles.login}>
               LOGIN / REGISTER
-            </Link>
-          </div>
-          <div className={styles.contentWishList}>
-            <div>
-              <IoHeartOutline />
-            </div>
-            <Link to='' className={styles.wishlist}>
-              WISHLIST
             </Link>
           </div>
           <div className={styles.contentSociety}>

@@ -26,7 +26,8 @@
   justify-content: space-around;
 }
 
-.contentLeftSite > a {
+.contentLeftSite > a,
+.contentLeftSite > button {
   border: none;
   background-color: transparent;
   font-size: 1.3rem;
@@ -39,7 +40,8 @@
   text-decoration: none;
 }
 
-.contentLeftSite > a:hover {
+.contentLeftSite > a:hover,
+.contentLeftSite > button:hover {
   color: orange;
   cursor: pointer;
   background-color: #3b3b3b;
@@ -78,9 +80,7 @@
 .contentRightSite {
   height: 100%;
 }
-.contentWishList {
-  height: 100%;
-}
+
 .contentSociety {
   display: flex;
 }

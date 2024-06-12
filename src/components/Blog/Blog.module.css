@@ -31,7 +31,7 @@
 .containerBlogWrapper {
   display: flex;
   margin-top: 2rem;
-  height: 60rem;
+  /* height: 60rem; */
   backdrop-filter: blur(20px);
   flex-direction: column;
 }
@@ -43,4 +43,11 @@
   height: 10%;
   display: flex;
   font-size: 3rem;
+}
+@media (max-width: 1200px) {
+  .contentBlogWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
 }

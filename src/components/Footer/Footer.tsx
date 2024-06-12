@@ -9,7 +9,6 @@ import Brliant from '@assets/zeg3.jpg';
 const Footer = () => {
   return (
     <>
-
       <footer className={styles.containerFotter}>
         <div className={styles.contentFooter}>
           <div className={styles.companyLogo}>
@@ -20,26 +19,27 @@ const Footer = () => {
               non soluta velit
             </p>
           </div>
-          <div className={styles.latestProducts}>
-            <h1 className={styles.titlearticle}>LATEST PRODUCTS</h1>
-            <div className={styles.contentLastProducts}>
+
+          <div className={styles.bestSeller}>
+            <h1 className={styles.titlearticle}>TOP RATED PRODUCTS</h1>
+            <div className={styles.contentbestSeller}>
               <img src={Phone} className={styles.image} />
               <div className={styles.info}>
-                <h1 className={styles.title}>Phone</h1>
-                <p className={styles.price}> $2000</p>
+              <h1 className={styles.title}>Phone</h1>
+                <p className={styles.price}>$3400</p>
               </div>
             </div>
-            <div className={styles.contentLastProducts}>
+            <div className={styles.contentbestSeller}>
               <img src={flashDisck} className={styles.image} />
               <div className={styles.info}>
-                <h1 className={styles.title}>Flash drive</h1>
+              <h1 className={styles.title}>Flash drive</h1>
                 <p className={styles.price}>$100</p>
               </div>
             </div>
-            <div className={styles.contentLastProducts}>
+            <div className={styles.contentbestSeller}>
               <img src={Laptop} className={styles.image} />
               <div className={styles.info}>
-                <h1 className={styles.title}>Phone</h1>
+                <h1 className={styles.title}>Laptop</h1>
                 <p className={styles.price}>$2000</p>
               </div>
             </div>
@@ -69,7 +69,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
           <div className={styles.latestNews}>
             <h1 className={styles.titlearticle}>LATEST NEWS</h1>
             <div className={styles.contentLatestNews}>
@@ -82,10 +81,36 @@ const Footer = () => {
               </p>
             </div>
           </div>
-        </div>{' '}
+        </div>
       </footer>
     </>
   );
 };
 
 export default Footer;
+{
+  /* <div className={styles.latestProducts}>
+<h1 className={styles.titlearticle}>LATEST PRODUCTS</h1>
+<div className={styles.contentLastProducts}>
+  <img src={Phone} className={styles.image} />
+  <div className={styles.info}>
+    <h1 className={styles.title}>Phone</h1>
+    <p className={styles.price}> $2000</p>
+  </div>
+</div>
+<div className={styles.contentLastProducts}>
+  <img src={flashDisck} className={styles.image} />
+  <div className={styles.info}>
+    <h1 className={styles.title}>Flash drive</h1>
+    <p className={styles.price}>$100</p>
+  </div>
+</div>
+<div className={styles.contentLastProducts}>
+  <img src={Laptop} className={styles.image} />
+  <div className={styles.info}>
+    <h1 className={styles.title}>Phone</h1>
+    <p className={styles.price}>$2000</p>
+  </div>
+</div>
+</div> */
+}
