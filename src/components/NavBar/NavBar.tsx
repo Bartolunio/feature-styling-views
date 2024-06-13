@@ -1,14 +1,18 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
-import { FaFacebookF } from 'react-icons/fa';
-import { FaPinterestP } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
-
+import { FaTwitter, FaFacebookF, FaPinterestP } from 'react-icons/fa';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { IoArrowBackSharp } from 'react-icons/io5';
 import styles from './NavBar.module.css';
+// import SearchBar from '@components/SearchBar';
 
-const NavBar = ({handleClick}) => {
+const NavBar = ({ handleClick }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navigate = useNavigate();
+
   const overload = () => {
     window.location.reload();
     window.scrollTo(0, 0);
@@ -17,6 +21,24 @@ const NavBar = ({handleClick}) => {
   const handleLoginClick = () => {
     navigate('/login-register');
   };
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1200) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className={styles.containerNavBar}>
@@ -50,7 +72,41 @@ const NavBar = ({handleClick}) => {
             </button>
           </div>
         </section>
+        <button className={styles.hamburger} onClick={handleMenuToggle}>
+          <RxHamburgerMenu />
+        </button>
       </div>
+      {menuOpen && (
+        <div className={styles.mobileMenu}>
+          <button className={styles.closeMenu} onClick={handleMenuToggle}>
+            <IoArrowBackSharp />
+          </button>
+          <Link to='/' onClick={overload}>
+            HOME
+          </Link>
+          <Link to='/FAQS'>FAQS</Link>
+          <button onClick={handleClick}>BLOG</button>
+          <Link to='/ContactUs'>CONTACT US</Link>
+          <div className={styles.mobileLogin} onClick={handleLoginClick}>
+            <FiLogIn />
+            <Link to='' className={styles.login}>
+              LOGIN / REGISTER
+            </Link>
+            {/* <SearchBar product={product} setFilteredItems={setFilteredItems} /> */}
+          </div>
+          <div className={styles.mobileSociety}>
+            <button>
+              <FaTwitter />
+            </button>
+            <button>
+              <FaFacebookF />
+            </button>
+            <button>
+              <FaPinterestP />
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

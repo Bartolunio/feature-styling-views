@@ -27,34 +27,34 @@ const Card = ({ products }: CardProps) => {
     setSelectedProduct(null);
   };
 
-  const handleAddToCart = () => {};
+  const handleAddToCart = () => {
+    console.log(products[id]);
+  };
 
   return (
     <>
       <h1 className={styles.titleSellingItems}>Best Selling Products</h1>
 
       <div className={styles.containerSellingItems}>
-
-          {products.map((product) => (
-            <div key={product.id}>
-              <div className={styles.card}>
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className={styles.image}
+        {products.map((product) => (
+          <div key={product.id}>
+            <div className={styles.card}>
+              <img
+                src={product.image}
+                alt={product.title}
+                className={styles.image}
+              />
+              <div className={styles.cardBody}>
+                <h2 className={styles.title}>{product.title}</h2>
+                <p className={styles.price}>${product.price}</p>
+                <HiOutlineEye
+                  className={styles.eye}
+                  onClick={() => handleEyeClick(product)}
                 />
-                <div className={styles.cardBody}>
-                  <h2 className={styles.title}>{product.title}</h2>
-                  <p className={styles.price}>${product.price}</p>
-                  <HiOutlineEye
-                    className={styles.eye}
-                    onClick={() => handleEyeClick(product)}
-                  />
-                </div>
               </div>
             </div>
-          ))}
-        
+          </div>
+        ))}
       </div>
       {selectedProduct && (
         <div className={styles.modal}>
