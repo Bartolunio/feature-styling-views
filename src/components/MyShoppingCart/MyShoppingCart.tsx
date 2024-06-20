@@ -1,55 +1,14 @@
-import { useState } from 'react';
-import { RiCloseFill } from 'react-icons/ri';
 import { IoArrowBackSharp } from 'react-icons/io5';
 import styles from './MyShoppingCart.module.css';
-
-type QuantitiesModel = {
-  [key: number]: number;
-};
-
+import { useCart } from '@components/CartContext/CartContext';
 const MyShoppingCart = () => {
+  const { cart } = useCart();
+
   const handleGoBack = () => {
     window.history.back();
   };
-  const initialQuantities = {
-    1: 1,
-    2: 1,
-    3: 1,
-    4: 1,
-    5: 1,
-    6: 1,
-  };
 
-  const [quantities, setQuantities] =
-    useState<QuantitiesModel>(initialQuantities);
-
-  const handleIncrease = (id: number) => {
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [id]: (prevQuantities[id] as number) + 1,
-    }));
-  };
-
-  const handleDecrease = (id: number) => {
-    setQuantities((prevQuantities) => {
-      if (prevQuantities[id] > 1) {
-        return {
-          ...prevQuantities,
-          [id]: prevQuantities[id] - 1,
-        };
-      }
-      return prevQuantities;
-    });
-  };
-
-  const products = [
-    { id: 1, name: 'Product 1', price: 1510 },
-    { id: 2, name: 'Product 1', price: 1550 },
-    { id: 3, name: 'Product 2', price: 110 },
-    { id: 4, name: 'Product 3', price: 120 },
-    { id: 5, name: 'Product 4', price: 150 },
-    { id: 6, name: 'Product 5', price: 10 },
-  ];
+  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
 
   return (
     <div className={styles.content}>
@@ -62,41 +21,65 @@ const MyShoppingCart = () => {
       </div>
 
       <div className={styles.totalAmount}>
-        <p>Value of products: 20129 $</p>
+        <p>Value of products: ${totalAmount.toFixed(2)}</p>
       </div>
+
       <div className={styles.shoppingCart}>
-        {products.map((product) => (
-          <div key={product.id} className={styles.shoppingCartItems}>
-            <div className={styles.productContent}>
-              <span>
-                <RiCloseFill />
-              </span>
-              <img className={styles.productImage} />
-              <h2>{product.name}</h2>
-              <div className={styles.quantityControl}>
-                <button
-                  className={styles.quantityButton}
-                  onClick={() => handleDecrease(product.id)}
-                >
-                  -
-                </button>
-                <span>{quantities[product.id]}</span>
-                <button
-                  className={styles.quantityButton}
-                  onClick={() => handleIncrease(product.id)}
-                >
-                  +
-                </button>
+        {cart.length === 0 ? (
+          <p>Twój koszyk jest pusty</p>
+        ) : (
+          cart.map((product, index) => (
+            <div key={index} className={styles.shoppingCartItems}>
+              <div className={styles.productContent}>
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className={styles.productImage}
+                />
+                <h2>{product.title}</h2>
+                <div className={styles.quantityControl}>
+                  <button>-</button>
+                  <span>1</span>
+                  <button>+</button>
+                </div>
+                <span className={styles.productPrice}>
+                  ${product.price.toFixed(2)}
+                </span>
               </div>
-              <p className={styles.productPrice}>
-                {'Total Price'}: ${product.price}
-              </p>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );
 };
 
 export default MyShoppingCart;
+{
+  /* <div key={product.id} className={styles.shoppingCartItems}>
+<div className={styles.productContent}>
+  <span>
+    <RiCloseFill />
+  </span>
+  <img
+    src={product.image}
+    alt={product.name}
+    className={styles.productImage}
+  />
+  <h2>{product.name}</h2>
+  <div className={styles.quantityControl}>
+    <button
+      className={styles.quantityButton}
+      // onClick={() => handleDecrease(product.id)}
+    >
+      -
+    </button>
+    <span>quanitities</span>
+    <button className={styles.quantityButton}>+</button>
+  </div>
+  <p className={styles.productPrice}>
+    {'Total Price'}: ${product.price}
+  </p>
+</div>
+</div> */
+}

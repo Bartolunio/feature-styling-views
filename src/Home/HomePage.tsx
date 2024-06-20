@@ -8,16 +8,15 @@ import CategoryItem from '@components/CategoryItem';
 import Blog from '@components/Blog';
 import Footer from '@components/Footer';
 import useFetchProducts from '../components/CardService';
-import logo from '../assets/Logo.png';
 
+import logo from '../assets/Logo.png';
 import '../App.css';
+
 const HomePage = () => {
   const [items, setItems] = useState([]);
+  const [cart, setCart] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
   const products = useFetchProducts();
-
-
-
   const blogRef = useRef<HTMLElement>(null);
 
   const handleBlogClick = () => {
@@ -30,6 +29,10 @@ const HomePage = () => {
       setFilteredItems(products);
     }
   }, [products]);
+
+  const handleAddToCart = (products) => {
+    setCart([...cart, products]);
+  };
 
   return (
     <>
@@ -49,10 +52,13 @@ const HomePage = () => {
             <ShoppingTools />
           </div>
           <CategoryItem />
-          <Card products={filteredItems} />
+          <Card
+            products={filteredItems}
+            product={products}
+            onAddToCart={handleAddToCart}
+          />
           <Blog ref={blogRef} />
           <Footer />
-       
         </div>
       </div>
     </>
