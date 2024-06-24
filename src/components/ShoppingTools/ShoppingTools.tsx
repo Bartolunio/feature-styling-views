@@ -8,14 +8,15 @@ import { AiFillTwitterCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 import { useState } from 'react';
+import { useCart } from '@components/CartContext/CartContext';
 
 const ShoppingTools = () => {
   const [showInfo, setShowInfo] = useState(false);
-
+  const { cart } = useCart();
+  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
   return (
     <>
       <div className={styles.contentShoppingTools}>
-      
         <div
           className={styles.support}
           onMouseEnter={() => setShowInfo(true)}
@@ -48,8 +49,8 @@ const ShoppingTools = () => {
         <Link to='/myshoppingcart' className={styles.shoppingCart}>
           <FiShoppingCart className={styles.icon} />
           <div className={styles.informationShoppingCart}>
-            <p>0 ITEMS</p>
-            <p>$0.00</p>
+            <p>{cart.length} ITEMS</p>
+            <p>{totalAmount} $</p>
           </div>
         </Link>
       </div>
