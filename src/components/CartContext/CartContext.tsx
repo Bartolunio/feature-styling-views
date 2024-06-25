@@ -1,16 +1,26 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, ReactNode } from 'react';
+import { Product } from '../CardService/types';
+import { CartContextValue } from './types';
 
-const CartContext = createContext();
+const CartContext = createContext<CartContextValue>({
+  cart: [],
+  addToCart: () => {},
+  removeFromCart: () => {},
+});
 
 export const useCart = () => useContext(CartContext);
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+type CardProviderProps = {
+  children: ReactNode;
+};
 
-  const addToCart = (product) => {
+export const CartProvider = ({ children }: CardProviderProps) => {
+  const [cart, setCart] = useState<Product[]>([]);
+
+  const addToCart = (product: Product) => {
     setCart([...cart, product]);
   };
-  const removeFromCart = (id) => {
+  const removeFromCart = (id: number) => {
     setCart((prevCart) => prevCart.filter((product) => product.id !== id));
   };
   return (

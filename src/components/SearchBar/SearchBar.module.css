@@ -47,3 +47,9 @@
 .inputSearch:focus::placeholder {
   opacity: 0;
 }
+@media (max-width: 1200px) {
+  .contentSearchBar {
+    width: 30%;
+    height: 10%;
+  }
+}

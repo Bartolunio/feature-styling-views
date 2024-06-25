@@ -6,9 +6,10 @@ import { FaTwitter, FaFacebookF, FaPinterestP } from 'react-icons/fa';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoArrowBackSharp } from 'react-icons/io5';
 import styles from './NavBar.module.css';
-// import SearchBar from '@components/SearchBar';
+import SearchBar from '@components/SearchBar';
+import ShoppingTools from '../ShoppingTools/ShoppingTools';
 
-const NavBar = ({ handleClick }) => {
+const NavBar = ({ handleBlogClick, product, setFilteredItems }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const NavBar = ({ handleClick }) => {
   const handleMenuToggle = () => {
     setMenuOpen(!menuOpen);
   };
-  
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1200) {
@@ -48,7 +49,7 @@ const NavBar = ({ handleClick }) => {
             HOME
           </Link>
           <Link to='/FAQS'>FAQS</Link>
-          <button onClick={handleClick}>BLOG</button>
+          <button onClick={handleBlogClick}>BLOG</button>
           <Link to='/ContactUs'>CONTACT US</Link>
         </section>
         <section className={styles.contentRightSite}>
@@ -81,18 +82,19 @@ const NavBar = ({ handleClick }) => {
           <button className={styles.closeMenu} onClick={handleMenuToggle}>
             <IoArrowBackSharp />
           </button>
+          <SearchBar product={product} setFilteredItems={setFilteredItems} />
+          <ShoppingTools />
           <Link to='/' onClick={overload}>
             HOME
           </Link>
           <Link to='/FAQS'>FAQS</Link>
-          <button onClick={handleClick}>BLOG</button>
+          <button onClick={handleBlogClick}>BLOG</button>
           <Link to='/ContactUs'>CONTACT US</Link>
           <div className={styles.mobileLogin} onClick={handleLoginClick}>
             <FiLogIn />
             <Link to='' className={styles.login}>
               LOGIN / REGISTER
             </Link>
-            {/* <SearchBar product={product} setFilteredItems={setFilteredItems} /> */}
           </div>
           <div className={styles.mobileSociety}>
             <button>

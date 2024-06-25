@@ -2,12 +2,17 @@ import { useState } from 'react';
 import { HiOutlineEye } from 'react-icons/hi';
 import { useCart } from '@components/CartContext/CartContext';
 import styles from './Card.module.css';
+import { Product } from '@components/CardService/types';
 
-const Card = ({ products }) => {
+type CartProps = {
+  products: Product[];
+};
+
+const Card = ({ products }: CartProps) => {
   const { addToCart } = useCart();
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const handleEyeClick = (product) => {
+  const handleEyeClick = (product: Product) => {
     setSelectedProduct(product);
   };
 

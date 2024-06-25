@@ -11,7 +11,7 @@ const MyShoppingCart = () => {
   const handleGoBack = () => {
     window.history.back();
   };
-  const handleRemoveItem = (id) => {
+  const handleRemoveItem = (id: number) => {
     removeFromCart(id);
   };
 

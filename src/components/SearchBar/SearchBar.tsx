@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { IoSearchOutline } from 'react-icons/io5';
 import styles from './SearchBar.module.css';
+import { Product } from '@components/CardService/types';
 
 const SearchBar = ({ product, setFilteredItems }) => {
   const [inputValue, setInputValue] = useState('');
@@ -11,7 +12,7 @@ const SearchBar = ({ product, setFilteredItems }) => {
       setFilteredItems(product);
     } else {
       setFilteredItems(
-        product.filter((product) =>
+        product.filter((product: Product) =>
           product?.title?.toLowerCase().includes(inputValue.toLowerCase())
         )
       );

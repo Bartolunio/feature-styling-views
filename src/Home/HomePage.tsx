@@ -8,14 +8,15 @@ import CategoryItem from '@components/CategoryItem';
 import Blog from '@components/Blog';
 import Footer from '@components/Footer';
 import useFetchProducts from '../components/CardService';
+import { Product } from '@components/CardService/types';
 
 import logo from '../assets/Logo.png';
 import '../App.css';
 
 const HomePage = () => {
-  const [items, setItems] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [items, setItems] = useState<Product[]>([]);
+  const [cart, setCart] = useState<Product[]>([]);
+  const [filteredItems, setFilteredItems] = useState<Product[]>([]);
   const products = useFetchProducts();
   const blogRef = useRef<HTMLElement>(null);
 
@@ -30,7 +31,7 @@ const HomePage = () => {
     }
   }, [products]);
 
-  const handleAddToCart = (products) => {
+  const handleAddToCart = (products: Product) => {
     setCart([...cart, products]);
   };
 
@@ -38,7 +39,11 @@ const HomePage = () => {
     <>
       <div className='App'>
         <div className='container'>
-          <NavBar handleClick={handleBlogClick} />
+          <NavBar
+            handleBlogClick={handleBlogClick}
+            product={items}
+            setFilteredItems={setFilteredItems}
+          />
           <div className='header-main-section'>
             <div className='search-area'>
               <div className='search-input'>
