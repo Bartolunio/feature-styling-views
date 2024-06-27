@@ -5,6 +5,7 @@ import FAQS from '@components/FAQS/FAQS';
 import ContactUs from '@components/ContactUs/ContactUs';
 import HomePage from './Home/HomePage';
 import { CartProvider } from '@components/CartContext/CartContext';
+import BillingDetails from '@components/BillingDetails';
 import './index.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/myshoppingcart' element={<MyShoppingCart />} />
           <Route path='/FAQS' element={<FAQS />} />
           <Route path='/CONTACTUS' element={<ContactUs />} />
+          <Route path='/billingDetails' element={<BillingDetails />} />
         </Routes>
       </CartProvider>
     </>

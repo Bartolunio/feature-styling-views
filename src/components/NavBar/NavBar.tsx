@@ -7,7 +7,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoArrowBackSharp } from 'react-icons/io5';
 import styles from './NavBar.module.css';
 import SearchBar from '@components/SearchBar';
-import ShoppingTools from '../ShoppingTools/ShoppingTools';
+import ShoppingTools from '@components/ShoppingTools/ShoppingTools';
 
 const NavBar = ({ handleBlogClick, product, setFilteredItems }) => {
   const [menuOpen, setMenuOpen] = useState(false);
