@@ -1,19 +1,26 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import './BillingDetails.css';
+import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import Select from 'react-select';
+import axios from 'axios';
+import styles from './BillingDetails.module.css'; // Zaktualizowana ścieżka do stylów
+
+interface Option {
+  value: string;
+  label: string;
+}
 
 interface FormData {
   firstName: string;
   lastName: string;
-  companyName: string;
-  country: string;
+  companyName?: string;
+  country: Option | null;
   streetAddress: string;
-  apartment: string;
+  apartment?: string;
   townCity: string;
-  state: string;
+  state: Option | null;
   zipCode: string;
   phone: string;
   email: string;
-  shipToDifferentAddress: boolean;
+  blikCode: string;
 }
 
 const BillingDetails: React.FC = () => {
@@ -21,38 +28,87 @@ const BillingDetails: React.FC = () => {
     firstName: '',
     lastName: '',
     companyName: '',
-    country: 'UNITED STATES (US)',
+    country: null,
     streetAddress: '',
     apartment: '',
     townCity: '',
-    state: 'CALIFORNIA',
+    state: null,
     zipCode: '',
     phone: '',
     email: '',
-    shipToDifferentAddress: false,
+    blikCode: '',
   });
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    const { name, value, type } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]:
-        type === 'checkbox' ? (e.target as HTMLInputElement).checked : value,
-    }));
+  const [countries, setCountries] = useState<Option[]>([]);
+  const [states, setStates] = useState<Option[]>([]);
+
+  useEffect(() => {
+  
+    axios
+      .get('https://restcountries.eu/rest/v2/all')
+      .then((response) => {
+        const countriesData = response.data.map((country) => ({
+          value: country.alpha2Code,
+          label: country.name,
+        }));
+        setCountries(countriesData);
+      })
+      .catch((error) => {
+        console.error('Error fetching countries data:', error);
+      });
+
+
+    axios
+      .get('https://api.example.com/states')
+      .then((response) => {
+        const statesData = response.data.map((state) => ({
+          value: state.code,
+          label: state.name,
+        }));
+        setStates(statesData);
+      })
+      .catch((error) => {
+        console.error('Error fetching states data:', error);
+      });
+  }, []);
+
+  const handleCountryChange = (selectedOption: Option | null) => {
+    setFormData({
+      ...formData,
+      country: selectedOption,
+    });
+  };
+
+  const handleStateChange = (selectedOption: Option | null) => {
+    setFormData({
+      ...formData,
+      state: selectedOption,
+    });
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Dane formularza:', formData);
+    if (formData.blikCode) {
+      alert('Operacja poprawnie przeprowadzona');
+      window.location.href = '/';
+    } else {
+      alert('Proszę wypełnić wszystkie wymagane pola');
+    }
   };
 
   return (
-    <form className='billingForm' onSubmit={handleSubmit}>
-      <h2 className='formTitle'>Billing details</h2>
-
-      <div className='formGroup'>
+    <form className={styles.billingForm} onSubmit={handleSubmit}>
+      <h2 className={styles.formTitle}>Billing details</h2>
+      <div className={styles.formGroup}>
         <label htmlFor='firstName'>FIRST NAME *</label>
         <input
           type='text'
@@ -63,8 +119,7 @@ const BillingDetails: React.FC = () => {
           required
         />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='lastName'>LAST NAME *</label>
         <input
           type='text'
@@ -75,8 +130,7 @@ const BillingDetails: React.FC = () => {
           required
         />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='companyName'>COMPANY NAME (OPTIONAL)</label>
         <input
           type='text'
@@ -86,21 +140,19 @@ const BillingDetails: React.FC = () => {
           onChange={handleChange}
         />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='country'>COUNTRY / REGION *</label>
-        <select
+        <Select
           id='country'
           name='country'
           value={formData.country}
-          onChange={handleChange}
+          onChange={handleCountryChange}
+          options={countries}
+          placeholder='Select country...'
           required
-        >
-          <option value='UNITED STATES (US)'>UNITED STATES (US)</option>
-        </select>
+        />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='streetAddress'>STREET ADDRESS *</label>
         <input
           type='text'
@@ -120,8 +172,7 @@ const BillingDetails: React.FC = () => {
           onChange={handleChange}
         />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='townCity'>TOWN / CITY *</label>
         <input
           type='text'
@@ -132,21 +183,19 @@ const BillingDetails: React.FC = () => {
           required
         />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='state'>STATE *</label>
-        <select
+        <Select
           id='state'
           name='state'
           value={formData.state}
-          onChange={handleChange}
+          onChange={handleStateChange}
+          options={states}
+          placeholder='Select state...'
           required
-        >
-          <option value='CALIFORNIA'>CALIFORNIA</option>
-        </select>
+        />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='zipCode'>ZIP CODE *</label>
         <input
           type='text'
@@ -157,8 +206,7 @@ const BillingDetails: React.FC = () => {
           required
         />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='phone'>PHONE *</label>
         <input
           type='tel'
@@ -169,8 +217,7 @@ const BillingDetails: React.FC = () => {
           required
         />
       </div>
-
-      <div className='formGroup'>
+      <div className={styles.formGroup}>
         <label htmlFor='email'>EMAIL ADDRESS *</label>
         <input
           type='email'
@@ -181,19 +228,23 @@ const BillingDetails: React.FC = () => {
           required
         />
       </div>
-
-      <div className='formGroup checkboxGroup'>
+      <div className={styles.formGroup}>
+        <label htmlFor='blikCode'>BLIK CODE *</label>
         <input
-          type='checkbox'
-          id='shipToDifferentAddress'
-          name='shipToDifferentAddress'
-          checked={formData.shipToDifferentAddress}
+          type='text'
+          id='blikCode'
+          name='blikCode'
+          value={formData.blikCode}
           onChange={handleChange}
+          pattern='\d{6}'
+          maxLength={6}
+          inputMode='numeric'
+          required
         />
-        <label htmlFor='shipToDifferentAddress'>
-          SHIP TO A DIFFERENT ADDRESS?
-        </label>
       </div>
+      <button type='submit' className={styles.payButton}>
+        Zapłać
+      </button>
     </form>
   );
 };
