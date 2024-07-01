@@ -12,8 +12,8 @@ import { useCart } from '@components/CartContext/CartContext';
 
 const ShoppingTools = () => {
   const [showInfo, setShowInfo] = useState(false);
-  const { cart } = useCart();
-  const totalAmount = cart.reduce((total, item) => total + item.price, 0);
+  const { cart, totalAmount } = useCart();
+
   return (
     <>
       <div className={styles.contentShoppingTools}>

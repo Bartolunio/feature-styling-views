@@ -1,22 +1,15 @@
-import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import Select from 'react-select';
-import axios from 'axios';
-import styles from './BillingDetails.module.css'; // Zaktualizowana ścieżka do stylów
-
-interface Option {
-  value: string;
-  label: string;
-}
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import styles from './BillingDetails.module.css';
 
 interface FormData {
   firstName: string;
   lastName: string;
   companyName?: string;
-  country: Option | null;
+  country: string;
   streetAddress: string;
   apartment?: string;
   townCity: string;
-  state: Option | null;
+  state: string;
   zipCode: string;
   phone: string;
   email: string;
@@ -28,67 +21,19 @@ const BillingDetails: React.FC = () => {
     firstName: '',
     lastName: '',
     companyName: '',
-    country: null,
+    country: '',
     streetAddress: '',
     apartment: '',
     townCity: '',
-    state: null,
+    state: '',
     zipCode: '',
     phone: '',
     email: '',
     blikCode: '',
   });
 
-  const [countries, setCountries] = useState<Option[]>([]);
-  const [states, setStates] = useState<Option[]>([]);
-
-  useEffect(() => {
-  
-    axios
-      .get('https://restcountries.eu/rest/v2/all')
-      .then((response) => {
-        const countriesData = response.data.map((country) => ({
-          value: country.alpha2Code,
-          label: country.name,
-        }));
-        setCountries(countriesData);
-      })
-      .catch((error) => {
-        console.error('Error fetching countries data:', error);
-      });
-
-
-    axios
-      .get('https://api.example.com/states')
-      .then((response) => {
-        const statesData = response.data.map((state) => ({
-          value: state.code,
-          label: state.name,
-        }));
-        setStates(statesData);
-      })
-      .catch((error) => {
-        console.error('Error fetching states data:', error);
-      });
-  }, []);
-
-  const handleCountryChange = (selectedOption: Option | null) => {
-    setFormData({
-      ...formData,
-      country: selectedOption,
-    });
-  };
-
-  const handleStateChange = (selectedOption: Option | null) => {
-    setFormData({
-      ...formData,
-      state: selectedOption,
-    });
-  };
-
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-
     setFormData({
       ...formData,
       [name]: value,
@@ -142,13 +87,12 @@ const BillingDetails: React.FC = () => {
       </div>
       <div className={styles.formGroup}>
         <label htmlFor='country'>COUNTRY / REGION *</label>
-        <Select
+        <input
+          type='text'
           id='country'
           name='country'
           value={formData.country}
-          onChange={handleCountryChange}
-          options={countries}
-          placeholder='Select country...'
+          onChange={handleChange}
           required
         />
       </div>
@@ -185,13 +129,12 @@ const BillingDetails: React.FC = () => {
       </div>
       <div className={styles.formGroup}>
         <label htmlFor='state'>STATE *</label>
-        <Select
+        <input
+          type='text'
           id='state'
           name='state'
           value={formData.state}
-          onChange={handleStateChange}
-          options={states}
-          placeholder='Select state...'
+          onChange={handleChange}
           required
         />
       </div>

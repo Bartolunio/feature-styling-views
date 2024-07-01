@@ -11,7 +11,6 @@ type CartProps = {
 const Card = ({ products }: CartProps) => {
   const { addToCart } = useCart();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
   const handleEyeClick = (product: Product) => {
     setSelectedProduct(product);
   };

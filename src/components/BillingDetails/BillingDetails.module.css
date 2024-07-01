@@ -61,3 +61,13 @@
 ::placeholder {
   color: #999;
 }
+
+.payButton {
+  color: white;
+  background-color: orange;
+  border: none;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 2rem;
+  font-size: 2rem;
+}

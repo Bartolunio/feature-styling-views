@@ -2,37 +2,44 @@ import { IoArrowBackSharp } from 'react-icons/io5';
 import { FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useCart } from '@components/CartContext/CartContext';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import styles from './MyShoppingCart.module.css';
 
 const MyShoppingCart = () => {
-  const { cart, removeFromCart, updateCartItemQuantity } = useCart();
-  const [quantities, setQuantities] = useState<{ [key: number]: number }>(
-    cart.reduce((acc, item) => ({ ...acc, [item.id]: item.quantity || 1 }), {})
-  );
+  const {
+    cart,
+    removeFromCart,
+    updateCartItemQuantity,
+    totalAmount,
+    quantities,
+  } = useCart();
+
+  // const [quantities, setQuantities] = useState<{ [key: number]: number }>(
+  //   cart.reduce((acc, item) => ({ ...acc, [item.id]: item.quantity || 1 }), {})
+  // );
 
   const handleGoBack = () => {
     window.history.back();
   };
 
-  const handleRemoveItem = (id: number) => {
-    removeFromCart(id);
-    const newQuantities = { ...quantities };
-    delete newQuantities[id];
-    setQuantities(newQuantities);
-  };
+  // const handleRemoveItem = (id: number) => {
+  //   removeFromCart(id);
+  //   const newQuantities = { ...quantities };
+  //   delete newQuantities[id];
+  //   setQuantities(newQuantities);
+  // };
 
-  const handleQuantityChange = (id: number, change: number) => {
-    const newQuantity = Math.max(1, quantities[id] + change);
-    setQuantities({ ...quantities, [id]: newQuantity });
-    updateCartItemQuantity(id, newQuantity);
-  };
+  // const handleQuantityChange = (id: number, change: number) => {
+  //   const newQuantity = Math.max(1, quantities[id] + change);
+  //   setQuantities({ ...quantities, [id]: newQuantity });
+  //   updateCartItemQuantity(id, newQuantity);
+  // };
 
-  const totalAmount = cart.reduce(
-    (total, item) => total + item.price * quantities[item.id],
-    0
-  );
+  // const totalAmount = cart.reduce(
+  //   (total, item) => total + item.price * quantities[item.id],
+  //   0
+  // );
 
   return (
     <div className={styles.content}>
@@ -55,11 +62,13 @@ const MyShoppingCart = () => {
                 />
                 <h2>{product.title}</h2>
                 <div className={styles.quantityControl}>
-                  <button onClick={() => handleQuantityChange(product.id, -1)}>
+                  <button
+                    onClick={() => updateCartItemQuantity(product.id, -1)}
+                  >
                     -
                   </button>
                   <span>{quantities[product.id]}</span>
-                  <button onClick={() => handleQuantityChange(product.id, 1)}>
+                  <button onClick={() => updateCartItemQuantity(product.id, 1)}>
                     +
                   </button>
                 </div>
@@ -68,7 +77,7 @@ const MyShoppingCart = () => {
                 </span>
                 <div
                   className={styles.trash}
-                  onClick={() => handleRemoveItem(product.id)}
+                  onClick={() => removeFromCart(product.id)}
                 >
                   <FaTrash />
                 </div>
