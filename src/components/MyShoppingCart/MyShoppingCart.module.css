@@ -178,3 +178,11 @@
   font-size: 14px;
   margin-top: 10px;
 }
+@media (max-width: 1200px) {
+  .shoppingCartItems {
+    width: 100%;
+  }
+  .cartTotal {
+    width: 100%;
+  }
+}

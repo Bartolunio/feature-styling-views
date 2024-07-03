@@ -15,31 +15,10 @@ const MyShoppingCart = () => {
     quantities,
   } = useCart();
 
-  // const [quantities, setQuantities] = useState<{ [key: number]: number }>(
-  //   cart.reduce((acc, item) => ({ ...acc, [item.id]: item.quantity || 1 }), {})
-  // );
-
   const handleGoBack = () => {
     window.history.back();
   };
 
-  // const handleRemoveItem = (id: number) => {
-  //   removeFromCart(id);
-  //   const newQuantities = { ...quantities };
-  //   delete newQuantities[id];
-  //   setQuantities(newQuantities);
-  // };
-
-  // const handleQuantityChange = (id: number, change: number) => {
-  //   const newQuantity = Math.max(1, quantities[id] + change);
-  //   setQuantities({ ...quantities, [id]: newQuantity });
-  //   updateCartItemQuantity(id, newQuantity);
-  // };
-
-  // const totalAmount = cart.reduce(
-  //   (total, item) => total + item.price * quantities[item.id],
-  //   0
-  // );
 
   return (
     <div className={styles.content}>

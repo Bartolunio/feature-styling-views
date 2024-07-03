@@ -8,7 +8,6 @@ import { IoArrowBackSharp } from 'react-icons/io5';
 import styles from './NavBar.module.css';
 import SearchBar from '@components/SearchBar';
 import ShoppingTools from '@components/ShoppingTools/ShoppingTools';
-
 const NavBar = ({ handleBlogClick, product, setFilteredItems }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -84,6 +83,7 @@ const NavBar = ({ handleBlogClick, product, setFilteredItems }) => {
           </button>
           <SearchBar product={product} setFilteredItems={setFilteredItems} />
           <ShoppingTools />
+
           <Link to='/' onClick={overload}>
             HOME
           </Link>
